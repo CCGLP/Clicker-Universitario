@@ -1,0 +1,67 @@
+html
+  font-size 14px
+section
+  background-color yellow
+
+#izq
+  background-color red
+  position absolute
+  left 0px
+  width 32%
+  top 0px
+  height 100%
+
+/*CSS derecha*/
+#der
+  background-color yellow
+  position absolute
+  left 67%
+  top 0px
+  height 100%
+  width 32%
+
+.update
+  width 100%
+  height 10%
+  background-color orange
+#puntos
+  text-align center
+  font-size 1.5em
+
+/* CSS MEDIO*/
+
+#mid
+  background-color grey
+  position absolute
+  left 33%
+  width 33%
+  top 0px
+  height 100%
+  overflow-y scroll
+
+
+/*Tambien en der*/
+
+.campo
+  width 100%
+  height 15%
+  background-color blue
+
+.sep
+  width 100%
+  height 1%
+  background-color black
+
+/*
+Código ardilla animación. (TOP)
+*/
+#ardilla
+  width 95%
+
+
+#ardilla:hover
+    width 100%
+
+#ardilla:active
+  width 90%
+  height 15%
