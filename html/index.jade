@@ -2,16 +2,20 @@ doctype html
 html  
   head
     link(href="app.css" rel="stylesheet")
-    title
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+    script(src="app.js")
+    
+    title 0
   body
     section#izq
       div#puntos
         p
-          strong 20202002 Millones
+          strong#puntostrue
+          normal unidades
         p 
           strong UP
         p
-          stong per second: 200
+          stong#dps per second: 0
         
         img#ardilla(src="ardilla.png")
           
@@ -35,7 +39,25 @@ html
       
         
     section#der
-      div.update
+      div.update#update1 Cafe
+        p#coste1 13
+        p#numero1 0
+      div.sep 
+      div.update#update2 Alumnos de Primero
+        p#coste2 100
+        p#numero2 0
+      div.sep
+      div.update#update3 Cafetería
+        p#coste3 400
+        p#numero3 0
+      div.sep
+      div.update#update4 Porcentaje de mujeres
+        p#coste4 1000
+        p#numero4 0
+      div.sep
+      div.update#update5 Profesor Sustituto
+        p#coste5 5000
+        p#numero5 0
       div.sep 
       div.update
       div.sep
@@ -44,14 +66,10 @@ html
       div.update
       div.sep
       div.update
-      div.sep 
-      div.update
       div.sep
       div.update
       div.sep
       div.update
-      div.sep
-      div.update
-    
+    script(src="app.js")
       
     
