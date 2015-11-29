@@ -25,6 +25,12 @@ for (lamiticai=0; lamiticai<=6; lamiticai++){
 }
 
 
+//--------------------------ValoresDPS casitas-----------------------//
+var unidadesDpsCasitas = new Array()
+for(lamiticai=0; lamiticai<10; lamiticai++){
+  unidadesDpsCasitas[lamiticai] = 0
+}
+
 
 //*******************************************************//
 
@@ -58,15 +64,15 @@ var manejoNombres = {
 }
 
 function actualizarDps(numero){
-  if (unidadesCasitas[numero] == valorDps){
+  if (unidadesDpsCasitas[numero] == valorDps){
     dps += dpsupdate[numero]
 
   }
-  else if (valorDps- unidadesCasitas[numero] == 1 ){
+  else if (valorDps- unidadesDpsCasitas[numero] == 1 ){
     dps += dpsupdate[numero] / constanteMillon
   }
 
-  else if (unidadesCasitas[numero] - valorDps ==1){
+  else if (unidadesDpsCasitas[numero] - valorDps ==1){
     dps += dpsupdate[numero] * constanteMillon
   }
   fixDps();
@@ -77,6 +83,7 @@ function fixDps(){
   if (dps > constanteMillon){
     dps /= constanteMillon
     valorDps++
+    $("#udps").html(manejarNombres(valorDps))
   }
 
 }
@@ -128,10 +135,11 @@ function capitalismo(numero){
 
 function fixUnidadesCasitas(numero){
   var aux = numero+1
+  var aux2 = "#unidades" + aux
   if (costes[numero] > constanteMillon){
-    console.log("hola")
     unidadesCasitas[numero]++
     costes[numero] /= constanteMillon
+    $(aux2).html(manejarNombres(unidadesCasitas[numero]))
   }
 
 
@@ -145,12 +153,20 @@ function manejoCasitas(numero){
     capitalismo (numero) //Capitalismo ++coste --banco
     casitas[numero]++
     $(idcasitas).html(casitas[numero])
-    costes[numero] = Math.round(costes[numero])
+
     actualizarDps(numero)
-    $(id).html(costes[numero])
+    $(id).html(costes[numero].toFixed(1))
     actualizarBanco()
   }
 }
+
+function mujeres(numero){
+  if (casitas[numero]<50){
+    manejoCasitas(numero)
+    $("#filtro").css("opacity", casitas[3]*0.01 )
+  }
+}
+
 
 $("#ardilla").on("click", function(){
   banco++
@@ -172,7 +188,7 @@ $("#update3").on("click", function(){
 })
 
 $("#update4").on("click",function(){
-  manejoCasitas(3)
+  mujeres(3)
 })
 
 $("#update5").on("click",function(){
@@ -210,5 +226,7 @@ function dpsPorDecima(){
   //Acordarse comprobar con diferencias mas grandes
   actualizarBanco()
 }
+
+
 //Codigo temporal
 setInterval ("dpsPorDecima()", 100)
