@@ -93,6 +93,10 @@ function actualizarBanco(){
     banco = banco / constanteMillon
     valorUnidades++
   }
+  else if (banco<1 && valorUnidades!=0){
+    banco = banco * constanteMillon
+    valorUnidades--
+  }
 
   $("#puntostrue").html(Math.round(banco))
   $("title").html(Math.round(banco))
@@ -145,7 +149,6 @@ function fixUnidadesCasitas(numero){
 
 }
 function manejoCasitas(numero){
-
   if (banco >= costes[numero] || valorUnidades > unidadesCasitas[numero]){
     var aux = numero +1;
     var id = "#coste" + aux.toString()
@@ -199,6 +202,31 @@ $("#update6").on("click", function(){
   manejoCasitas(5)
 })
 
+//Manejo de Skins
+$("#esne").on("click",function(){
+  $("#ardilla").attr("src", "esne.png")
+  $(".campo").css("background-color", "red")
+  $(".update").css("background-color","red")
+  $(".sep").css("background-color","white")
+
+})
+
+$("#fic").on("click",function(){
+  $("#ardilla").attr("src","fic.png")
+  $("#izq").css("background-color","#326E76")
+  $(".campo").css("background-color", "#326E76")
+  $(".update").css("background-color","#D1DCDD")
+  $(".sep").css("background-color","black")
+
+})
+$("#defaultSkin").on("click",function(){
+  $("#ardilla").attr("src","ardilla.png")
+  $("#izq").css("background-color","red")
+  $(".campo").css("background-color", "blue")
+  $(".update").css("background-color","orange")
+  $(".sep").css("background-color","black")
+})
+
 /*
 
 var id
@@ -215,7 +243,8 @@ for (lamiticai = 1; lamiticai < 5; lamiticai++){
 
 
 
-function dpsPorDecima(){
+function dpsPorDecima(xDate){
+  /*
   if (valorDps == valorUnidades){
     banco += dps/10
   }
@@ -224,9 +253,24 @@ function dpsPorDecima(){
 
   }
   //Acordarse comprobar con diferencias mas grandes
+  */
+  var yDate = new Date()
+
+
+  var decimasDeSegundoPasadas = (yDate.getTime() - xDate.fecha.getTime())/100
+
+
+  if (valorDps == valorUnidades){
+    banco += (dps/10) * decimasDeSegundoPasadas
+  }
+  else if (valorUnidades-valorDps ==1){
+    banco+= (dps/constanteMillon) * decimasDeSegundoPasadas
+  }
+  xDate.fecha = yDate;
   actualizarBanco()
 }
 
+var xDate = {fecha:new Date()}
 
 //Codigo temporal
-setInterval ("dpsPorDecima()", 100)
+setInterval ("dpsPorDecima(xDate)", 100)

@@ -2,14 +2,21 @@ html
   font-size 14px
 section
   background-color yellow
+header
+  width 100vw
+  height 2vh
+  background-color white
+  z-index 110
 
+header div
+  float left
 #izq
   background-color red
   position absolute
   left 0px
   width 32%
-  top 0px
-  height 100%
+  top 2vh
+  height 96%
 #filtro
   background-color rgba(255,105,180,255)
   opacity 0
@@ -25,8 +32,8 @@ section
   background-color yellow
   position absolute
   left 67%
-  top 0px
-  height 100%
+  top 2vh
+  height 96%
   width 32%
   overflow-y scroll
 
@@ -36,6 +43,7 @@ section
   width 100%
   height 13%
   background-color orange
+  overflow-y hidden
 #puntos
   text-align center
   font-size 1.5em
@@ -47,8 +55,8 @@ section
   position absolute
   left 33%
   width 33%
-  top 0px
-  height 100%
+  top 2vh
+  height 96%
   overflow-y scroll
 
 
