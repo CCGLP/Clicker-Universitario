@@ -17,6 +17,11 @@ costes[2] = 400
 costes[3] = 1000
 costes[4] = 5000
 costes[5] = 40000
+costes[6] = 200000
+costes[7] = 1.667
+costes[8] = 123
+costes[9] = 4000
+costes[10] = 75000
 /*............................................................... */
 // ---------------------ValoresUnidades casitas-------------------//
 var unidadesCasitas = new Array()
@@ -24,17 +29,38 @@ for (lamiticai=0; lamiticai<=6; lamiticai++){
   unidadesCasitas[lamiticai] = 0
 }
 
+for (lamiticai=7; lamiticai<=10; lamiticai++){
+  unidadesCasitas[lamiticai] = 1
+}
 
 //--------------------------ValoresDPS casitas-----------------------//
 var unidadesDpsCasitas = new Array()
-for(lamiticai=0; lamiticai<10; lamiticai++){
+for(lamiticai=0; lamiticai<=8; lamiticai++){
   unidadesDpsCasitas[lamiticai] = 0
+}
+for (lamiticai=9; lamiticai<=10 ; lamiticai++){
+  unidadesDpsCasitas[lamiticai] = 1
 }
 
 
 //*******************************************************//
+//****************************Array de upgrades costes*********************
+var costesUpgrades = new Array()
+var costeInicial = 1000;
+var multiplicador = 1;
+for (lamiticai=0; lamiticai<9; lamiticai++){
+  costesUpgrades[lamiticai] = costeInicial * multiplicador
+  multiplicador *= 2
+}
 
 
+//*******************************************************************************
+//***************************Array de unidades costes upgrades*********************//
+var unidadesCostesUpgrades = new Array()
+for (lamiticai=0; lamiticai<20; lamiticai++){
+  unidadesCostesUpgrades[lamiticai] = 0
+}
+//****************************************************************************************
 
 //-------------------------Array de casitas que tengo-------------------------
 var casitas = new Array()
@@ -53,6 +79,12 @@ dpsupdate[2] = 4
 dpsupdate[3] = 12
 dpsupdate[4] = 40
 dpsupdate[5] = 100
+dpsupdate[6] = 400
+dpsupdate[7] = 6666
+dpsupdate[8] = 98765
+dpsupdate[9] = 1
+dpsupdate[10] = 10
+
 
 //----------------------------------------------------------------------
 var manejoNombres = {
@@ -63,6 +95,32 @@ var manejoNombres = {
 
 }
 
+function manejoActualizar (nupgrade,numero, operacion, aumento){
+
+
+  if ((banco >= costesUpgrades[nupgrade] &&valorUnidades == unidadesCostesUpgrades[nupgrade]) ||
+   (valorUnidades > unidadesCostesUpgrades[nupgrade] && banco * constanteMillon > costesUpgrades[nupgrade]))
+
+  {
+    var id = "#actualizar"+(nupgrade+1)
+    if (valorUnidades == unidadesCostesUpgrades[nupgrade]){
+      banco-= costesUpgrades[nupgrade]
+    }
+    else if (valorUnidades-unidadesCostesUpgrades[nupgrade] == 1){
+      banco-= costesUpgrades[nupgrade] / constanteMillon
+    }
+  $(id).remove() //removemos el id clickado(se recoloca luego)
+
+  if (operacion == 0){ // Multiplicar
+    dps -= dpsupdate[numero] * casitas[numero]
+    dpsupdate[numero] *= aumento
+    dps += dpsupdate[numero] * casitas[numero]
+    fixDps();
+    $("#dps").html(dps.toFixed(1))
+  }
+}
+
+}
 function actualizarDps(numero){
   if (unidadesDpsCasitas[numero] == valorDps){
     dps += dpsupdate[numero]
@@ -124,6 +182,7 @@ function manejarNombres(un){
 
 }
 
+
 function capitalismo(numero){
   if (valorUnidades == unidadesCasitas[numero]){
     banco-= costes[numero]
@@ -149,7 +208,8 @@ function fixUnidadesCasitas(numero){
 
 }
 function manejoCasitas(numero){
-  if (banco >= costes[numero] || valorUnidades > unidadesCasitas[numero]){
+  if ((banco >= costes[numero] &&valorUnidades == unidadesCasitas[numero]) ||
+   (valorUnidades > unidadesCasitas[numero] && banco * constanteMillon > costes[numero])) {
     var aux = numero +1;
     var id = "#coste" + aux.toString()
     var idcasitas = "#numero" + aux.toString()
@@ -170,12 +230,14 @@ function mujeres(numero){
   }
 }
 
-
+//Manejo del click de la imagen
 $("#ardilla").on("click", function(){
   banco++
   actualizarBanco()
 })
+//************************************************************
 
+//Manejo de los clicks en las casitas
 $("#update1").on("click",function(){
   manejoCasitas(0)
 })
@@ -202,6 +264,54 @@ $("#update6").on("click", function(){
   manejoCasitas(5)
 })
 
+$("#update7").on("click", function(){
+  manejoCasitas(6)
+})
+$("#update8").on("click", function(){
+  manejoCasitas(7)
+})
+$("#update9").on("click", function(){
+  manejoCasitas(8)
+})
+$("#update10").on("click", function(){
+  manejoCasitas(9)
+})
+$("#update11").on("click", function(){
+  manejoCasitas(10)
+})
+//*******************************************
+
+//Manejo de clicks en los updates
+$("#actualizar1").on("click", function(){
+  manejoActualizar(0,0,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar2").on("click", function(){
+  manejoActualizar(1,0,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar3").on("click", function(){
+  manejoActualizar(2,0,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar4").on("click", function(){
+  manejoActualizar(3,0,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar5").on("click", function(){
+  manejoActualizar(4,0,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar6").on("click", function(){
+  manejoActualizar(5,0,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar7").on("click", function(){
+  manejoActualizar(6,0,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar8").on("click", function(){
+  manejoActualizar(7,0,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar9").on("click", function(){
+  manejoActualizar(8,0,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+
+
+//************************************************
 //Manejo de Skins
 $("#esne").on("click",function(){
   $("#ardilla").attr("src", "esne.png")
@@ -227,33 +337,11 @@ $("#defaultSkin").on("click",function(){
   $(".sep").css("background-color","black")
 })
 
-/*
-
-var id
-for (lamiticai = 1; lamiticai < 5; lamiticai++){
-  id = "#update" + lamiticai
-  $(id).on("click",function(){
-    manejoCasitas(lamiticai-1)
-
-  })
-
-}
-*/
-
 
 
 
 function dpsPorDecima(xDate){
-  /*
-  if (valorDps == valorUnidades){
-    banco += dps/10
-  }
-  else if (valorUnidades-valorDps == 1){
-    banco += dps/(constanteMillon*10)
 
-  }
-  //Acordarse comprobar con diferencias mas grandes
-  */
   var yDate = new Date()
 
 
