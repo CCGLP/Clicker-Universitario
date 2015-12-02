@@ -6,20 +6,27 @@ section {
 }
 header {
   width: 100vw;
-  height: 4vh;
+  height: 3vh;
   background-color: #fff;
   z-index: 110;
 }
 header div {
   float: left;
+  font-size: 1.4em;
+}
+#reset {
+  float: right;
+}
+#save {
+  float: right;
 }
 #izq {
   background-color: #f00;
   position: absolute;
   left: 0px;
   width: 32%;
-  top: 2vh;
-  height: 95%;
+  top: 3vh;
+  height: 95vh;
 }
 #filtro {
   background-color: #ff69b4;
@@ -37,8 +44,8 @@ header div {
   background-color: #ff0;
   position: absolute;
   left: 67%;
-  top: 2vh;
-  height: 95%;
+  top: 3vh;
+  height: 95vh;
   width: 32%;
   overflow-y: scroll;
 }
@@ -58,8 +65,8 @@ header div {
   position: absolute;
   left: 33%;
   width: 33%;
-  top: 2vh;
-  height: 95%;
+  top: 3vh;
+  height: 95vh;
   overflow-y: scroll;
 }
 /*Tambien en der*/
@@ -74,6 +81,7 @@ header div {
   background-color: #808080;
   float: left;
   border: solid #000 1px;
+  overflow-y: hidden;
 }
 .sep {
   width: 100%;

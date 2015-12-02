@@ -1,98 +1,165 @@
-/*Vars principales/globales/algo */
-var banco = 0
-var dps= 0
-var lamiticai = 0
-var valorUnidades = 0
-var constanteMillon = 1000000
-var valorDps = 0
-//--------------------------------------------------
+
+
+if (localStorage.getItem ("save") == null){
+
+  /*Vars principales/globales/algo */
+  var banco = 0
+  var dps= 0
+  var lamiticai = 0
+  var valorUnidades = 0
+  var constanteMillon = 1000000
+  var valorDps = 0
+  //--------------------------------------------------
 
 
 
-/* Array de costes de las casitas */
-var costes = new Array()
-costes[0] = 13
-costes[1] = 100
-costes[2] = 400
-costes[3] = 1000
-costes[4] = 5000
-costes[5] = 40000
-costes[6] = 200000
-costes[7] = 1.667
-costes[8] = 123
-costes[9] = 4000
-costes[10] = 75000
-/*............................................................... */
-// ---------------------ValoresUnidades casitas-------------------//
-var unidadesCasitas = new Array()
-for (lamiticai=0; lamiticai<=6; lamiticai++){
-  unidadesCasitas[lamiticai] = 0
+  /* Array de costes de las casitas */
+  var costes = new Array()
+  costes[0] = 13
+  costes[1] = 100
+  costes[2] = 400
+  costes[3] = 1000
+  costes[4] = 5000
+  costes[5] = 40000
+  costes[6] = 200000
+  costes[7] = 1.667
+  costes[8] = 123
+  costes[9] = 4000
+  costes[10] = 75000
+  /*............................................................... */
+  // ---------------------ValoresUnidades casitas-------------------//
+  var unidadesCasitas = new Array()
+  for (lamiticai=0; lamiticai<=6; lamiticai++){
+    unidadesCasitas[lamiticai] = 0
+  }
+
+  for (lamiticai=7; lamiticai<=10; lamiticai++){
+    unidadesCasitas[lamiticai] = 1
+  }
+
+  //--------------------------ValoresDPS casitas-----------------------//
+  var unidadesDpsCasitas = new Array()
+  for(lamiticai=0; lamiticai<=8; lamiticai++){
+    unidadesDpsCasitas[lamiticai] = 0
+  }
+  for (lamiticai=9; lamiticai<=10 ; lamiticai++){
+    unidadesDpsCasitas[lamiticai] = 1
+  }
+
+
+  //*******************************************************//
+  //****************************Array de upgrades costes*********************
+  var costesUpgrades = new Array()
+  var costeInicial = 1000;
+  var multiplicador = 1;
+  for (lamiticai=0; lamiticai<9; lamiticai++){
+    costesUpgrades[lamiticai] = costeInicial * multiplicador
+    multiplicador *= 2
+  }
+
+
+  //*******************************************************************************
+  //***************************Array de unidades costes upgrades*********************//
+  var unidadesCostesUpgrades = new Array()
+  for (lamiticai=0; lamiticai<20; lamiticai++){
+    unidadesCostesUpgrades[lamiticai] = 0
+  }
+  //****************************************************************************************
+  //**************************Array de si existen los divs de los upgrades o no*****
+  var existenciaUpgrade = new Array()
+  for (lamiticai=0; lamiticai<100; lamiticai++){
+    existenciaUpgrade[lamiticai] = true
+  }
+
+  //***************************************************************************
+  //-------------------------Array de casitas que tengo-------------------------
+  var casitas = new Array()
+  for (lamiticai = 0;lamiticai<20; lamiticai++){
+    casitas[lamiticai] = 0
+  }
+
+  //----------------------------------------------------------------------------
+
+
+  // --------------------------Dps Update array---------------------------------
+  var dpsupdate = new Array()
+  dpsupdate[0] = 0.1
+  dpsupdate[1] = 0.5
+  dpsupdate[2] = 4
+  dpsupdate[3] = 12
+  dpsupdate[4] = 40
+  dpsupdate[5] = 100
+  dpsupdate[6] = 400
+  dpsupdate[7] = 6666
+  dpsupdate[8] = 98765
+  dpsupdate[9] = 1
+  dpsupdate[10] = 10
+
+
+  //----------------------------------------------------------------------
+  var manejoNombres = {
+      UNIDADES: {valor:0, nombre:"unidades"},
+      MILLONES: {valor:1, nombre:"millones"},
+      BILLONES: {valor:2, nombre:"billones"},
+      TRILLONES:{valor:3, nombre:"trillones"}
+
+  }
+
+var objeto = {
+  dpsupdate,
+  manejoNombres,
+  casitas,
+  unidadesCostesUpgrades,
+  banco,
+  dps,
+  lamiticai,
+  valorUnidades,
+  constanteMillon,
+  valorDps,
+  costes,
+  unidadesCasitas,
+  unidadesDpsCasitas,
+  costesUpgrades,
+  costeInicial,
+  multiplicador,
+  existenciaUpgrade,
 }
 
-for (lamiticai=7; lamiticai<=10; lamiticai++){
-  unidadesCasitas[lamiticai] = 1
+  localStorage.setItem("save", JSON.stringify(objeto))
+
+}
+else{
+  var objeto = JSON.parse(localStorage.getItem("save"));
+  var dpsupdate= objeto.dpsupdate;
+  var manejoNombres = objeto.manejoNombres;
+  var casitas = objeto.casitas;
+  var unidadesCostesUpgrades = objeto.unidadesCostesUpgrades;
+  var banco = objeto.banco;
+  var dps = objeto.dps;
+  var lamiticai = objeto.lamiticai;
+  var valorUnidades = objeto.valorUnidades
+  var constanteMillon = objeto.constanteMillon
+  var valorDps = objeto.valorDps
+  var costes = objeto.costes
+  var unidadesCasitas = objeto.unidadesCasitas
+  var unidadesDpsCasitas = objeto.unidadesDpsCasitas
+  var costesUpgrades = objeto.costesUpgrades
+  var costeInicial = objeto.costeInicial
+  var multiplicador = objeto.multiplicador
+  var existenciaUpgrade = objeto.existenciaUpgrade
+  limpiarUpgrades()
+  recolocarDps()
 }
 
-//--------------------------ValoresDPS casitas-----------------------//
-var unidadesDpsCasitas = new Array()
-for(lamiticai=0; lamiticai<=8; lamiticai++){
-  unidadesDpsCasitas[lamiticai] = 0
+function recolocarDps(){
+  $("#dps").html(dps.toFixed(1))
+  $("#udps").html(manejarNombres(valorDps))
 }
-for (lamiticai=9; lamiticai<=10 ; lamiticai++){
-  unidadesDpsCasitas[lamiticai] = 1
-}
-
-
-//*******************************************************//
-//****************************Array de upgrades costes*********************
-var costesUpgrades = new Array()
-var costeInicial = 1000;
-var multiplicador = 1;
-for (lamiticai=0; lamiticai<9; lamiticai++){
-  costesUpgrades[lamiticai] = costeInicial * multiplicador
-  multiplicador *= 2
-}
-
-
-//*******************************************************************************
-//***************************Array de unidades costes upgrades*********************//
-var unidadesCostesUpgrades = new Array()
-for (lamiticai=0; lamiticai<20; lamiticai++){
-  unidadesCostesUpgrades[lamiticai] = 0
-}
-//****************************************************************************************
-
-//-------------------------Array de casitas que tengo-------------------------
-var casitas = new Array()
-for (lamiticai = 0;lamiticai<20; lamiticai++){
-  casitas[lamiticai] = 0
-}
-
-//----------------------------------------------------------------------------
-
-
-// --------------------------Dps Update array---------------------------------
-var dpsupdate = new Array()
-dpsupdate[0] = 0.1
-dpsupdate[1] = 0.5
-dpsupdate[2] = 4
-dpsupdate[3] = 12
-dpsupdate[4] = 40
-dpsupdate[5] = 100
-dpsupdate[6] = 400
-dpsupdate[7] = 6666
-dpsupdate[8] = 98765
-dpsupdate[9] = 1
-dpsupdate[10] = 10
-
-
-//----------------------------------------------------------------------
-var manejoNombres = {
-    UNIDADES: {valor:0, nombre:"unidades"},
-    MILLONES: {valor:1, nombre:"millones"},
-    BILLONES: {valor:2, nombre:"billones"},
-    TRILLONES:{valor:3, nombre:"trillones"}
-
+function limpiarUpgrades(){
+  for (lamiticai = 0; lamiticai<100; lamiticai++){
+    if (!existenciaUpgrade[lamiticai])
+      $("#actualizar" + (lamiticai+1)).remove()
+  }
 }
 
 function manejoActualizar (nupgrade,numero, operacion, aumento){
@@ -109,12 +176,23 @@ function manejoActualizar (nupgrade,numero, operacion, aumento){
     else if (valorUnidades-unidadesCostesUpgrades[nupgrade] == 1){
       banco-= costesUpgrades[nupgrade] / constanteMillon
     }
+    existenciaUpgrade[nupgrade] = false
   $(id).remove() //removemos el id clickado(se recoloca luego)
 
   if (operacion == 0){ // Multiplicar
-    dps -= dpsupdate[numero] * casitas[numero]
-    dpsupdate[numero] *= aumento
-    dps += dpsupdate[numero] * casitas[numero]
+    if (valorDps == unidadesDpsCasitas[numero]){
+      dps -= dpsupdate[numero] * casitas[numero]
+      dpsupdate[numero] *= aumento
+      dps += dpsupdate[numero] * casitas[numero]
+    }
+    else if (valorDps-unidadesDpsCasitas[numero] == 1){
+        dps-= dpsupdate[numero]/constanteMillon * casitas[numero]
+        dpsupdate[numero]*=aumento
+        dps+= dpsupdate[numero]/constanteMillon * casitas[numero]
+    }
+
+
+
     fixDps();
     $("#dps").html(dps.toFixed(1))
   }
@@ -229,6 +307,26 @@ function mujeres(numero){
     $("#filtro").css("opacity", casitas[3]*0.01 )
   }
 }
+
+
+function reset(){
+  localStorage.clear()
+  location.reload()
+
+}
+
+//Manejo del boton de reset
+$("#reset").on("click",function(){
+  reset();
+})
+//************************
+
+//Manejo del boton de save
+$("#save").on("click",function(){
+  autoSave();
+  swal("Has guardado la partida! :)")
+})
+//*****************************
 
 //Manejo del click de la imagen
 $("#ardilla").on("click", function(){
@@ -352,13 +450,37 @@ function dpsPorDecima(xDate){
     banco += (dps/10) * decimasDeSegundoPasadas
   }
   else if (valorUnidades-valorDps ==1){
-    banco+= (dps/constanteMillon) * decimasDeSegundoPasadas
+    banco+= (dps/constanteMillon/10) * decimasDeSegundoPasadas
+  }
+  else if (valorUnidades - valorDps == -1){
+    banco += (dps * constanteMillon /10 ) * decimasDeSegundoPasadas
   }
   xDate.fecha = yDate;
   actualizarBanco()
 }
 
+function autoSave(){
+   objeto.dpsupdate= dpsupdate;
+   objeto.manejoNombres = manejoNombres;
+   objeto.casitas = casitas;
+   objeto.unidadesCostesUpgrades = unidadesCostesUpgrades;
+   objeto.banco = banco;
+   objeto.dps = dps;
+   objeto.lamiticai = lamiticai;
+   objeto.valorUnidades = valorUnidades
+   objeto.constanteMillon = constanteMillon
+   objeto.valorDps = valorDps
+   objeto.costes = costes
+   objeto.unidadesCasitas = unidadesCasitas
+   objeto.unidadesDpsCasitas = unidadesDpsCasitas
+   objeto.costesUpgrades = costesUpgrades
+   objeto.costeInicial = costeInicial
+   objeto.multiplicador = multiplicador
+   objeto.existenciaUpgrade = existenciaUpgrade
+   localStorage.setItem("save", JSON.stringify(objeto))
+}
 var xDate = {fecha:new Date()}
 
 //Codigo temporal
-setInterval ("dpsPorDecima(xDate)", 100)
+setInterval("dpsPorDecima(xDate)", 100)
+setInterval("autoSave()", 10000) //AutoSave cada 10s. [CONFIGURACIÓN]
