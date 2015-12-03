@@ -25,7 +25,7 @@ header div {
   position: absolute;
   left: 0px;
   width: 32%;
-  top: 3vh;
+  top: 2vh;
   height: 95vh;
 }
 #filtro {
@@ -44,7 +44,7 @@ header div {
   background-color: #ff0;
   position: absolute;
   left: 67%;
-  top: 3vh;
+  top: 2vh;
   height: 95vh;
   width: 32%;
   overflow-y: scroll;
@@ -65,7 +65,7 @@ header div {
   position: absolute;
   left: 33%;
   width: 33%;
-  top: 3vh;
+  top: 2vh;
   height: 95vh;
   overflow-y: scroll;
 }

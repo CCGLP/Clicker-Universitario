@@ -128,7 +128,7 @@ var objeto = {
   localStorage.setItem("save", JSON.stringify(objeto))
 
 }
-else{
+else{ // CARGA DEL LOCALSTORAGE
   var objeto = JSON.parse(localStorage.getItem("save"));
   var dpsupdate= objeto.dpsupdate;
   var manejoNombres = objeto.manejoNombres;
@@ -147,13 +147,25 @@ else{
   var costeInicial = objeto.costeInicial
   var multiplicador = objeto.multiplicador
   var existenciaUpgrade = objeto.existenciaUpgrade
-  limpiarUpgrades()
-  recolocarDps()
+  fixSave()
 }
 
-function recolocarDps(){
+function fixSave(){
+  var aux = "#numero";
+  var aux1 ="#coste"
+  var aux2 ="#unidades"
   $("#dps").html(dps.toFixed(1))
   $("#udps").html(manejarNombres(valorDps))
+  //CUIDADO SI CAMBIAS EL NUMERO DE GENERADORES EN LO SIGUIENTE
+  for (lamiticai =1; lamiticai<=11; lamiticai++){
+    $(aux+lamiticai).html(casitas[lamiticai-1])
+    $(aux1+lamiticai).html(costes[lamiticai-1].toFixed(1))
+    $(aux2+lamiticai).html(manejarNombres(unidadesCasitas[lamiticai-1]))
+
+
+  }
+
+  limpiarUpgrades()
 }
 function limpiarUpgrades(){
   for (lamiticai = 0; lamiticai<100; lamiticai++){
