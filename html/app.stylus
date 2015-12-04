@@ -1,16 +1,45 @@
 html
   font-size 14px
+
+@media screen and (max-width:1000px)
+  html
+    font-size 13px
+@media screen and (max-width:600px)
+  html
+    font-size 10px
+@media screen and (max-width:320px)
+  html
+    font-size 8px
+
+
+
+
+
 section
   background-color yellow
 header
   width 100vw
-  height 3vh
+  height 1.4em
   background-color white
   z-index 110
 
 header div
   float left
   font-size 1.4em
+  cursor pointer
+  cursor hand
+
+#mute
+  margin-left 2em
+  width 1.4em
+  height 100%
+
+#mute img
+  width 100%
+  height 100%
+img
+  cursor pointer
+  cursor hand
 
 #reset
   float right
@@ -21,7 +50,7 @@ header div
   position absolute
   left 0px
   width 32%
-  top 2vh
+  top 1.4em
   height 95vh
 #filtro
   background-color rgba(255,105,180,255)
@@ -38,7 +67,7 @@ header div
   background-color yellow
   position absolute
   left 67%
-  top 2vh
+  top 1.4em
   height 95vh
   width 32%
   overflow-y scroll
@@ -50,6 +79,8 @@ header div
   height 13%
   background-color orange
   overflow-y hidden
+  cursor pointer
+  cursor hand
 #puntos
   text-align center
   font-size 1.5em
@@ -61,7 +92,7 @@ header div
   position absolute
   left 33%
   width 33%
-  top 2vh
+  top 1.4em
   height 95vh
   overflow-y scroll
 
@@ -80,10 +111,21 @@ header div
   float left
   border solid black 1px
   overflow-y hidden
+  cursor pointer
+  cursor hand
 .sep
   width 100%
   height 1%
   background-color black
+
+//footer
+footer
+  position absolute
+  bottom 0px
+  font-size 1.1em
+
+
+
 
 /*
 Código ardilla animación. (TOP)

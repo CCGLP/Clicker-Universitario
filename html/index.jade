@@ -8,7 +8,7 @@ html
     script(src="sweetalert.min.js")
     link(rel="stylesheet" href="sweetalert.css")
     meta(charset="utf-8")
-    meta(name="viewport" content="initial-scale=0.9, user-scalable=no")
+    meta(name="viewport" content="initial-scale=1, user-scalable=no")
     
     
     title 0
@@ -19,7 +19,8 @@ html
       div#fic FIC
       div#reset RESET
       div#save  SAVE    &nbsp &nbsp 
-      
+      div#mute
+        img(src="mute_icon.png")
     section#filtro
     section#izq
       div#puntos
@@ -48,6 +49,15 @@ html
       
       div.sep
       div.campo
+        div.actualizar#actualizar10 Alum2 5000
+        div.actualizar#actualizar11 Alum3 10000
+        div.actualizar#actualizar12 Alum4 20000
+        div.actualizar#actualizar13 Alum5 40000
+        div.actualizar#actualizar14 Alum6 80000
+        div.actualizar#actualizar15 Alum7 160000
+        div.actualizar#actualizar16 Alum8 320000
+        div.actualizar#actualizar17 Alum9 640000
+        div.actualizar#actualizar18 Alumni 1.28M
       div.sep
       div.campo
       div.sep
@@ -121,9 +131,12 @@ html
         p#numero11 0
       div.sep
       div.update
-      audio(loop autoplay)
-        source(src="background_sound.mp3" type ="audio/mpeg")
+    footer
+      a(href="http://ccglp.itch.io" target="_blank") Made by CCGLP
+    audio(loop autoplay )
+      source(src="background_sound.mp3" type ="audio/mpeg")
     script(src="app.js")
+    script(src="updateWarning.js")
     script(src="googleAnalytics.js")
     
       

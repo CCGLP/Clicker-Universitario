@@ -56,14 +56,27 @@ if (localStorage.getItem ("save") == null){
     costesUpgrades[lamiticai] = costeInicial * multiplicador
     multiplicador *= 2
   }
+  costeInicial = 5000
+  multiplicador = 1;
+  for (lamiticai=9; lamiticai<18; lamiticai++){
+    if (costeInicial*multiplicador < constanteMillon){
+      costesUpgrades[lamiticai] = costeInicial * multiplicador
+    }
+    else {
+      costesUpgrades[lamiticai] = costeInicial * multiplicador / constanteMillon
 
+    }
+    multiplicador *=2
+  }
 
   //*******************************************************************************
   //***************************Array de unidades costes upgrades*********************//
   var unidadesCostesUpgrades = new Array()
   for (lamiticai=0; lamiticai<20; lamiticai++){
     unidadesCostesUpgrades[lamiticai] = 0
+
   }
+  unidadesCostesUpgrades[17] = 1
   //****************************************************************************************
   //**************************Array de si existen los divs de los upgrades o no*****
   var existenciaUpgrade = new Array()
@@ -176,12 +189,13 @@ function limpiarUpgrades(){
 
 function manejoActualizar (nupgrade,numero, operacion, aumento){
 
-
   if ((banco >= costesUpgrades[nupgrade] &&valorUnidades == unidadesCostesUpgrades[nupgrade]) ||
    (valorUnidades > unidadesCostesUpgrades[nupgrade] && banco * constanteMillon > costesUpgrades[nupgrade]))
 
   {
+
     var id = "#actualizar"+(nupgrade+1)
+
     if (valorUnidades == unidadesCostesUpgrades[nupgrade]){
       banco-= costesUpgrades[nupgrade]
     }
@@ -327,6 +341,23 @@ function reset(){
 
 }
 
+function mute (){
+  var sound = $("audio")[0]
+
+if (!sound.muted)
+  sound.muted = true
+else {
+  sound.muted = false
+}
+
+
+}
+
+//Boton de mute
+$("#mute").on("click",function(){
+  mute();
+})
+//**********************
 //Manejo del boton de reset
 $("#reset").on("click",function(){
   reset();
@@ -418,6 +449,35 @@ $("#actualizar8").on("click", function(){
 })
 $("#actualizar9").on("click", function(){
   manejoActualizar(8,0,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+
+//********************************************************
+$("#actualizar10").on("click", function(){
+  manejoActualizar(9,1,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar11").on("click", function(){
+  manejoActualizar(10,1,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar12").on("click", function(){
+  manejoActualizar(11,1,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar13").on("click", function(){
+  manejoActualizar(12,1,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar14").on("click", function(){
+  manejoActualizar(13,1,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar15").on("click", function(){
+  manejoActualizar(14,1,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar16").on("click", function(){
+  manejoActualizar(15,1,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar17").on("click", function(){
+  manejoActualizar(16,1,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar18").on("click", function(){
+  manejoActualizar(17,1,0,2) //Numero de upgrade. Numero de opción. Aumento
 })
 
 

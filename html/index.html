@@ -8,7 +8,7 @@
     <script src="sweetalert.min.js"></script>
     <link rel="stylesheet" href="sweetalert.css"/>
     <meta charset="utf-8"/>
-    <meta name="viewport" content="initial-scale=0.9, user-scalable=no"/>
+    <meta name="viewport" content="initial-scale=1, user-scalable=no"/>
     <title>0</title>
   </head>
   <body>
@@ -18,6 +18,7 @@
       <div id="fic">FIC</div>
       <div id="reset">RESET</div>
       <div id="save"> SAVE    &nbsp &nbsp </div>
+      <div id="mute"><img src="mute_icon.png"/></div>
     </header>
     <section id="filtro"></section>
     <section id="izq">
@@ -45,7 +46,17 @@
         <div id="actualizar9" class="actualizar">Café+ 2560000</div>
       </div>
       <div class="sep"></div>
-      <div class="campo"></div>
+      <div class="campo">
+        <div id="actualizar10" class="actualizar">Alum2 5000</div>
+        <div id="actualizar11" class="actualizar">Alum3 10000</div>
+        <div id="actualizar12" class="actualizar">Alum4 20000</div>
+        <div id="actualizar13" class="actualizar">Alum5 40000</div>
+        <div id="actualizar14" class="actualizar">Alum6 80000</div>
+        <div id="actualizar15" class="actualizar">Alum7 160000</div>
+        <div id="actualizar16" class="actualizar">Alum8 320000</div>
+        <div id="actualizar17" class="actualizar">Alum9 640000</div>
+        <div id="actualizar18" class="actualizar">Alumni 1.28M</div>
+      </div>
       <div class="sep"></div>
       <div class="campo"></div>
       <div class="sep"></div>
@@ -128,11 +139,13 @@
       </div>
       <div class="sep"></div>
       <div class="update"></div>
-      <audio loop="loop" autoplay="autoplay">
-        <source src="background_sound.mp3" type="audio/mpeg"/>
-      </audio>
     </section>
+    <footer><a href="http://ccglp.itch.io" target="_blank">Made by CCGLP</a></footer>
+    <audio loop="loop" autoplay="autoplay">
+      <source src="background_sound.mp3" type="audio/mpeg"/>
+    </audio>
     <script src="app.js"></script>
+    <script src="updateWarning.js"></script>
     <script src="googleAnalytics.js"></script>
   </body>
 </html>
