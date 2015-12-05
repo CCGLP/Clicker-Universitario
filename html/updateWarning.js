@@ -1,8 +1,8 @@
-var versionActual = "0.01"
+var versionActual = "0.0666" //CODENAME SAM DEVIL
 
 $(document).ready(function(){
 
-  console.log("Hola, estoy funcionando")
+
   if (localStorage.getItem("Update") == versionActual){
     swal("Tienes la ultima versión, gracias por testear! :) ")
   }
