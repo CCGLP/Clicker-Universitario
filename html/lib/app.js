@@ -608,27 +608,27 @@ $("#actualizar54").on("click", function(){
 //************************************************
 //Manejo de Skins
 $("#esne").on("click",function(){
-  $("#ardilla").attr("src", "esne.png")
+  $("#ardilla").attr("src", "/../imagenes/esne.png")
   $(".campo").css("background-color", "red")
   $(".update").css("background-color","red")
-  $(".sep").css("background-color","white")
+
 
 })
 
 $("#fic").on("click",function(){
-  $("#ardilla").attr("src","fic.png")
+  $("#ardilla").attr("src","/../imagenes/fic.png")
   $("#izq").css("background-color","#326E76")
   $(".campo").css("background-color", "#326E76")
   $(".update").css("background-color","#D1DCDD")
-  $(".sep").css("background-color","black")
+
 
 })
 $("#defaultSkin").on("click",function(){
-  $("#ardilla").attr("src","ardilla.png")
+  $("#ardilla").attr("src","/../imagenes/ardilla.png")
   $("#izq").css("background-color","red")
   $(".campo").css("background-color", "blue")
   $(".update").css("background-color","orange")
-  $(".sep").css("background-color","black")
+
 })
 
 

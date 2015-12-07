@@ -1,12 +1,11 @@
 doctype html 
 html  
   head
-    link(href="normalize.css" rel ="stylesheet")
-    link(href="app.css" rel="stylesheet")
+    link(href="/css/normalize.css" rel ="stylesheet")
+    link(href="/css/app.css" rel="stylesheet")
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
-    script(src="app.js")
-    script(src="sweetalert.min.js")
-    link(rel="stylesheet" href="sweetalert.css")
+    script(src="/lib/sweetalert.min.js")
+    link(rel="stylesheet" href="/css/sweetalert.css")
     meta(charset="utf-8")
     meta(name="viewport" content="initial-scale=1, user-scalable=no")
     
@@ -20,7 +19,7 @@ html
       div#reset RESET
       div#save  SAVE    &nbsp &nbsp 
       div#mute
-        img(src="mute_icon.png")
+        img(src="/imagenes/mute_icon.png")
     section#filtro
     section#izq
       div#puntos
@@ -33,7 +32,7 @@ html
           stong#dps 0
           normal#udps unidades
         
-        img#ardilla(src="ardilla.png")
+        img#ardilla(src="/imagenes/ardilla.png")
           
     section#mid
       div.explicacion
@@ -183,9 +182,9 @@ html
       a(href="http://ccglp.itch.io" target="_blank") Made by CCGLP
     audio(loop autoplay )
       source(src="background_sound.mp3" type ="audio/mpeg")
-    script(src="app.js")
-    script(src="updateWarning.js")
-    script(src="googleAnalytics.js")
+    script(src="/lib/app.js")
+    script(src="/lib/updateWarning.js")
+    script(src="/lib/googleAnalytics.js")
     
       
   
