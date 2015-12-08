@@ -14,23 +14,23 @@ html
 
 
 
+div.cosa a
+  font-size 1em
+
 
 section
   background-color yellow
-header
-  width 100vw
-  height 1.4em
-  background-color white
-  z-index 110
-
-header div
-  float left
-  font-size 1.4em
+.cosa
+  position absolute
+  top 0.2em
+  left 0.2em
+.cosa a img
+  width 3em
+.link
   cursor pointer
   cursor hand
 
 #mute
-  margin-left 2em
   width 1.4em
   height 100%
 
@@ -41,17 +41,14 @@ img
   cursor pointer
   cursor hand
 
-#reset
-  float right
-#save
-  float right
+
 #izq
   background-color red
-  position absolute
-  left 0px
+  //  position absolute
+  //  left 0px
   width 32%
-  top 1.4em
-  height 95vh
+  //  top 1.4em
+
 #filtro
   background-color rgba(255,105,180,255)
   opacity 0
@@ -65,10 +62,9 @@ img
 /*CSS derecha*/
 #der
   background-color yellow
-  position absolute
-  left 67%
-  top 1.4em
-  height 95vh
+  //  position absolute
+  //  left 67%
+  //  top 1.4em
   width 32%
   overflow-y scroll
 
@@ -84,16 +80,16 @@ img
 #puntos
   text-align center
   font-size 1.5em
+  margin-top 2em
 
 /* CSS MEDIO*/
 
 #mid
   background-color grey
-  position absolute
-  left 33%
+  //  position absolute
+  //  left 33%
   width 33%
-  top 1.4em
-  height 95vh
+  //  top 1.4em
   overflow-y scroll
 
 
@@ -127,8 +123,9 @@ footer
   font-size 1.1em
 
 
-
-
+.parte
+  float left
+  height 100vh
 /*
 Código ardilla animación. (TOP)
 */
@@ -142,3 +139,8 @@ Código ardilla animación. (TOP)
 #ardilla:active
   width 90%
   height 15%
+
+
+.todo
+  width 100vw
+  height 100vh

@@ -6,259 +6,267 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="/lib/sweetalert.min.js"></script>
     <link rel="stylesheet" href="/css/sweetalert.css"/>
+    <link rel="stylesheet" href="/lib/menu/jquery.mmenu.all.css"/>
+    <script src="/lib/menu/jquery.mmenu.min.all.js"></script>
     <meta charset="utf-8"/>
     <meta name="viewport" content="initial-scale=1, user-scalable=no"/>
     <title>0</title>
   </head>
   <body>
-    <header> 
-      <div id="defaultSkin">  NORMAL&nbsp&nbsp</div>
-      <div id="esne">ESNE&nbsp  &nbsp  </div>
-      <div id="fic">FIC</div>
-      <div id="reset">RESET</div>
-      <div id="save"> SAVE    &nbsp &nbsp </div>
-      <div id="mute"><img src="/imagenes/mute_icon.png"/></div>
-    </header>
-    <section id="filtro"></section>
-    <section id="izq">
-      <div id="puntos">
-        <p><strong id="puntostrue"></strong>
-          <normal id="unidades">unidades</normal>
-        </p>
-        <p> <strong>UP</strong></p>
-        <p>per second: 
-          <stong id="dps">0</stong>
-          <normal id="udps">unidades</normal>
-        </p><img id="ardilla" src="/imagenes/ardilla.png"/>
-      </div>
-    </section>
-    <section id="mid">
-      <div class="explicacion"><strong>UPGRADES GENERADORES</strong></div>
-      <div class="sep"></div>
-      <div class="campo">
-        <div id="actualizar1" class="actualizar">Café+ 1000</div>
-        <div id="actualizar2" class="actualizar">Café+ 2000</div>
-        <div id="actualizar3" class="actualizar">Café+ 4000</div>
-        <div id="actualizar4" class="actualizar">Café+ 8000</div>
-        <div id="actualizar5" class="actualizar">Café+ 16000</div>
-        <div id="actualizar6" class="actualizar">Café+ 32000</div>
-        <div id="actualizar7" class="actualizar">Café+ 64000</div>
-        <div id="actualizar8" class="actualizar">Café+ 128000</div>
-        <div id="actualizar9" class="actualizar">Café+ 2560000</div>
-      </div>
-      <div class="sep"></div>
-      <div class="campo">
-        <div id="actualizar10" class="actualizar">Alum2 5000</div>
-        <div id="actualizar11" class="actualizar">Alum3 10000</div>
-        <div id="actualizar12" class="actualizar">Alum4 20000</div>
-        <div id="actualizar13" class="actualizar">Alum5 40000</div>
-        <div id="actualizar14" class="actualizar">Alum6 80000</div>
-        <div id="actualizar15" class="actualizar">Alum7 160000</div>
-        <div id="actualizar16" class="actualizar">Alum8 320000</div>
-        <div id="actualizar17" class="actualizar">Alum9 640000</div>
-        <div id="actualizar18" class="actualizar">Alumni 1.28M</div>
-      </div>
-      <div class="sep"></div>
-      <div class="campo">
-        <div id="actualizar19" class="actualizar">Cafet+ 20000</div>
-        <div id="actualizar20" class="actualizar">Cafet+ 40000</div>
-        <div id="actualizar21" class="actualizar">Cafet+ 80000</div>
-        <div id="actualizar22" class="actualizar">Cafet+ 160000</div>
-        <div id="actualizar23" class="actualizar">Cafet+ 320000</div>
-        <div id="actualizar24" class="actualizar">Cafet+ 640000</div>
-        <div id="actualizar25" class="actualizar">Cafet+ 1.28M</div>
-        <div id="actualizar26" class="actualizar">Cafet+ 2.56M</div>
-        <div id="actualizar27" class="actualizar">Cafet+ 5.12M</div>
-      </div>
-      <div class="sep"></div>
-      <div class="campo">
-        <div id="actualizar28" class="actualizar">Discrimin- 80000</div>
-        <div id="actualizar29" class="actualizar">Discrimin- 160000</div>
-        <div id="actualizar30" class="actualizar">Discrimin- 320000</div>
-        <div id="actualizar31" class="actualizar">Discrimin- 640000</div>
-        <div id="actualizar32" class="actualizar">Discrimin- 1.28M</div>
-        <div id="actualizar33" class="actualizar">Discrimin- 2.56M</div>
-        <div id="actualizar34" class="actualizar">Discrimin- 5.12M</div>
-        <div id="actualizar35" class="actualizar">Discrimin- 10.24M</div>
-        <div id="actualizar36" class="actualizar">Discrimin- 20.48M</div>
-      </div>
-      <div class="sep"></div>
-      <div class="campo">
-        <div id="actualizar37" class="actualizar">ProfS+ 320000</div>
-        <div id="actualizar38" class="actualizar">ProfS+ 640000</div>
-        <div id="actualizar39" class="actualizar">ProfS+ 1.28M</div>
-        <div id="actualizar40" class="actualizar">ProfS+ 2.56M</div>
-        <div id="actualizar41" class="actualizar">ProfS+ 5.12M</div>
-        <div id="actualizar42" class="actualizar">ProfS+ 10.24M</div>
-        <div id="actualizar43" class="actualizar">ProfS+ 20.48M</div>
-        <div id="actualizar44" class="actualizar">ProfS+ 40.96M</div>
-        <div id="actualizar45" class="actualizar">ProfS+ 81.92M</div>
-      </div>
-      <div class="sep"></div>
-      <div class="campo">
-        <div id="actualizar46" class="actualizar">Prof+ 1.28M</div>
-        <div id="actualizar47" class="actualizar">Prof+ 2.56M</div>
-        <div id="actualizar48" class="actualizar">Prof+ 5.12M</div>
-        <div id="actualizar49" class="actualizar">Prof+ 10.24M</div>
-        <div id="actualizar50" class="actualizar">Prof+ 20.48M</div>
-        <div id="actualizar51" class="actualizar">Prof+ 40.96M</div>
-        <div id="actualizar52" class="actualizar">Prof+ 81.92M</div>
-        <div id="actualizar53" class="actualizar">Prof+ 163.84M</div>
-        <div id="actualizar54" class="actualizar">Prof+ 327.68M</div>
-      </div>
-      <div class="sep"></div>
-      <div class="campo">
-        <div id="actualizar55" class="actualizar">Baños+ 5.12M</div>
-        <div id="actualizar56" class="actualizar">Baños+ 10.24M</div>
-        <div id="actualizar57" class="actualizar">Baños+ 20.48M</div>
-        <div id="actualizar58" class="actualizar">Baños+ 40.96M</div>
-        <div id="actualizar59" class="actualizar">Baños+ 81.92M</div>
-        <div id="actualizar60" class="actualizar">Baños+ 163.84M</div>
-        <div id="actualizar61" class="actualizar">Baños+ 327.68M</div>
-        <div id="actualizar62" class="actualizar">Baños+ 655.36M</div>
-        <div id="actualizar63" class="actualizar">Baños+ 1310.72M</div>
-      </div>
-      <div class="sep"></div>
-      <div class="campo">
-        <div id="actualizar64" class="actualizar">Decan+ 20.482M</div>
-        <div id="actualizar65" class="actualizar">Decan+ 40.96M</div>
-        <div id="actualizar66" class="actualizar">Decan+ 81.92M</div>
-        <div id="actualizar67" class="actualizar">Decan+ 163.84M</div>
-        <div id="actualizar68" class="actualizar">Decan+ 327.68M</div>
-        <div id="actualizar69" class="actualizar">Decan+ 655.36M</div>
-        <div id="actualizar70" class="actualizar">Decan+ 1310.72M</div>
-        <div id="actualizar71" class="actualizar">Decan+ 2621.44M</div>
-        <div id="actualizar72" class="actualizar">Decan+ 5242.88M</div>
-      </div>
-      <div class="sep"></div>
-      <div class="campo">
-        <div id="actualizar73" class="actualizar">Puent+ 81.92M</div>
-        <div id="actualizar74" class="actualizar">Puent+ 163.84M</div>
-        <div id="actualizar75" class="actualizar">Puent+ 327.68M</div>
-        <div id="actualizar76" class="actualizar">Puent+ 655.36M</div>
-        <div id="actualizar77" class="actualizar">Puent+ 1310.72M</div>
-        <div id="actualizar78" class="actualizar">Puent+ 2621.44M</div>
-        <div id="actualizar79" class="actualizar">Puent+ 5242.88M</div>
-        <div id="actualizar80" class="actualizar">Puent+ 10485.76M</div>
-        <div id="actualizar81" class="actualizar">Puent+ 20971.52M</div>
-      </div>
-      <div class="sep"></div>
-      <div class="campo">
-        <div id="actualizar82" class="actualizar">Dimen+ 327.68M</div>
-        <div id="actualizar83" class="actualizar">Dimen+ 655.36M</div>
-        <div id="actualizar84" class="actualizar">Dimen+ 1310.72M</div>
-        <div id="actualizar85" class="actualizar">Dimen+ 2621.44M</div>
-        <div id="actualizar86" class="actualizar">Dimen+ 5242.88M</div>
-        <div id="actualizar87" class="actualizar">Dimen+ 10485.76M</div>
-        <div id="actualizar88" class="actualizar">Dimen+ 20971.52M</div>
-        <div id="actualizar89" class="actualizar">Dimen+ 41943.04M</div>
-        <div id="actualizar90" class="actualizar">Dimen+ 83886.08M</div>
-      </div>
-      <div class="sep"></div>
-      <div class="campo">
-        <div id="actualizar91" class="actualizar">Fiest+ 1310.72M</div>
-        <div id="actualizar92" class="actualizar">Fiest+ 2621.44M</div>
-        <div id="actualizar93" class="actualizar">Fiest+ 5242.88M</div>
-        <div id="actualizar94" class="actualizar">Fiest+ 10485.76M</div>
-        <div id="actualizar95" class="actualizar">Fiest+ 20971.52M</div>
-        <div id="actualizar96" class="actualizar">Fiest+ 41943.04M</div>
-        <div id="actualizar97" class="actualizar">Fiest+ 83886.08M</div>
-        <div id="actualizar98" class="actualizar">Fiest+ 167772.16M</div>
-        <div id="actualizar99" class="actualizar">Fiest+ 335544.32M</div>
-      </div>
-      <div class="sep"></div>
-    </section>
-    <!--  div.campo
-    div.actualizar#actualizar100 Baños+ 5.12M
-    div.actualizar#actualizar101 Baños+ 10.24M
-    div.actualizar#actualizar102 Baños+ 20.48M
-    div.actualizar#actualizar103 Baños+ 40.96M
-    div.actualizar#actualizar104 Baños+ 81.92M
-    div.actualizar#actualizar105 Baños+ 163.84M
-    div.actualizar#actualizar106 Baños+ 327.68M
-    div.actualizar#actualizar107 Baños+ 655.36M
-    div.actualizar#actualizar108 Baños+ 1310.72M
-    
-    
-    
-    -->
-    <section id="der">
-      <div class="explicacion"> <strong>GENERADORES</strong></div>
-      <div class="sep"></div>
-      <div id="update1" class="update">Cafe
-        <p id="coste1">13</p>
-        <p id="unidades1">unidades</p>
-        <p id="numero1">0</p>
-      </div>
-      <div class="sep"> </div>
-      <div id="update2" class="update">Alumnos de Primero
-        <p id="coste2">100</p>
-        <p id="unidades2">unidades</p>
-        <p id="numero2">0</p>
-      </div>
-      <div class="sep"></div>
-      <div id="update3" class="update">Cafetería
-        <p id="coste3">400</p>
-        <p id="unidades3">unidades</p>
-        <p id="numero3">0</p>
-      </div>
-      <div class="sep"></div>
-      <div id="update4" class="update">Porcentaje de mujeres
-        <p id="coste4">1000</p>
-        <p id="unidades4">unidades</p>
-        <p id="numero4">0</p>
-      </div>
-      <div class="sep"></div>
-      <div id="update5" class="update">Profesor Sustituto
-        <p id="coste5">5000</p>
-        <p id="unidades5">unidades</p>
-        <p id="numero5">0</p>
-      </div>
-      <div class="sep"> </div>
-      <div id="update6" class="update">Profesor plasta
-        <p id="coste6">40000</p>
-        <p id="unidades6">unidades</p>
-        <p id="numero6">0</p>
-      </div>
-      <div class="sep"></div>
-      <div id="update7" class="update">Baños
-        <p id="coste7">200000</p>
-        <p id="unidades7">unidades</p>
-        <p id="numero7">0    </p>
-      </div>
-      <div class="sep"></div>
-      <div id="update8" class="update">Decanato 
-        <p id="coste8">1.667 </p>
-        <p id="unidades8">millones</p>
-        <p id="numero8">0 </p>
-      </div>
-      <div class="sep"></div>
-      <div id="update9" class="update">Puente
-        <p id="coste9">123.457</p>
-        <p id="unidades9">millones</p>
-        <p id="numero9">0</p>
-      </div>
-      <div class="sep"></div>
-      <div id="update10" class="update">Dimension-Viernes
-        <p id="coste10">4000</p>
-        <p id="unidades10">millones</p>
-        <p id="numero10">0</p>
-      </div>
-      <div class="sep"></div>
-      <div id="update11" class="update">Fiesta de la Universidad
-        <p id="coste11">75000</p>
-        <p id="unidades11">millones</p>
-        <p id="numero11">0</p>
-      </div>
-      <div class="sep"></div>
-      <div class="update"></div>
-    </section>
-    <footer><a href="http://ccglp.itch.io" target="_blank">Made by CCGLP</a></footer>
-    <audio loop="loop" autoplay="autoplay">
-      <source src="background_sound.mp3" type="audio/mpeg"/>
-    </audio>
+    <nav id="menu">
+      <ul>
+        <li id="defaultSkin" class="link">  NORMAL&nbsp&nbsp</li>
+        <li id="esne" class="link">ESNE&nbsp  &nbsp  </li>
+        <li id="fic" class="link">FIC</li>
+        <li id="reset" class="link">RESET</li>
+        <li id="save" class="link"> SAVE    &nbsp &nbsp </li>
+        <li id="mute" class="link"><img src="/imagenes/mute_icon.png"/></li>
+      </ul>
+    </nav>
+    <div class="todo"> 
+      <div class="cosa"><a href="#menu"> <img src="/imagenes/menu.png"/></a></div>
+      <section id="filtro"></section>
+      <section id="izq" class="parte">
+        <div id="puntos">
+          <p><strong id="puntostrue"></strong>
+            <normal id="unidades">unidades</normal>
+          </p>
+          <p> <strong>UP</strong></p>
+          <p>per second: 
+            <stong id="dps">0</stong>
+            <normal id="udps">unidades</normal>
+          </p><img id="ardilla" src="/imagenes/ardilla.png"/>
+        </div>
+      </section>
+      <section id="mid" class="parte">
+        <div class="explicacion"><strong>UPGRADES GENERADORES</strong></div>
+        <div class="sep"></div>
+        <div class="campo">
+          <div id="actualizar1" class="actualizar">Café+ 1000</div>
+          <div id="actualizar2" class="actualizar">Café+ 2000</div>
+          <div id="actualizar3" class="actualizar">Café+ 4000</div>
+          <div id="actualizar4" class="actualizar">Café+ 8000</div>
+          <div id="actualizar5" class="actualizar">Café+ 16000</div>
+          <div id="actualizar6" class="actualizar">Café+ 32000</div>
+          <div id="actualizar7" class="actualizar">Café+ 64000</div>
+          <div id="actualizar8" class="actualizar">Café+ 128000</div>
+          <div id="actualizar9" class="actualizar">Café+ 2560000</div>
+        </div>
+        <div class="sep"></div>
+        <div class="campo">
+          <div id="actualizar10" class="actualizar">Alum2 5000</div>
+          <div id="actualizar11" class="actualizar">Alum3 10000</div>
+          <div id="actualizar12" class="actualizar">Alum4 20000</div>
+          <div id="actualizar13" class="actualizar">Alum5 40000</div>
+          <div id="actualizar14" class="actualizar">Alum6 80000</div>
+          <div id="actualizar15" class="actualizar">Alum7 160000</div>
+          <div id="actualizar16" class="actualizar">Alum8 320000</div>
+          <div id="actualizar17" class="actualizar">Alum9 640000</div>
+          <div id="actualizar18" class="actualizar">Alumni 1.28M</div>
+        </div>
+        <div class="sep"></div>
+        <div class="campo">
+          <div id="actualizar19" class="actualizar">Cafet+ 20000</div>
+          <div id="actualizar20" class="actualizar">Cafet+ 40000</div>
+          <div id="actualizar21" class="actualizar">Cafet+ 80000</div>
+          <div id="actualizar22" class="actualizar">Cafet+ 160000</div>
+          <div id="actualizar23" class="actualizar">Cafet+ 320000</div>
+          <div id="actualizar24" class="actualizar">Cafet+ 640000</div>
+          <div id="actualizar25" class="actualizar">Cafet+ 1.28M</div>
+          <div id="actualizar26" class="actualizar">Cafet+ 2.56M</div>
+          <div id="actualizar27" class="actualizar">Cafet+ 5.12M</div>
+        </div>
+        <div class="sep"></div>
+        <div class="campo">
+          <div id="actualizar28" class="actualizar">Discrimin- 80000</div>
+          <div id="actualizar29" class="actualizar">Discrimin- 160000</div>
+          <div id="actualizar30" class="actualizar">Discrimin- 320000</div>
+          <div id="actualizar31" class="actualizar">Discrimin- 640000</div>
+          <div id="actualizar32" class="actualizar">Discrimin- 1.28M</div>
+          <div id="actualizar33" class="actualizar">Discrimin- 2.56M</div>
+          <div id="actualizar34" class="actualizar">Discrimin- 5.12M</div>
+          <div id="actualizar35" class="actualizar">Discrimin- 10.24M</div>
+          <div id="actualizar36" class="actualizar">Discrimin- 20.48M</div>
+        </div>
+        <div class="sep"></div>
+        <div class="campo">
+          <div id="actualizar37" class="actualizar">ProfS+ 320000</div>
+          <div id="actualizar38" class="actualizar">ProfS+ 640000</div>
+          <div id="actualizar39" class="actualizar">ProfS+ 1.28M</div>
+          <div id="actualizar40" class="actualizar">ProfS+ 2.56M</div>
+          <div id="actualizar41" class="actualizar">ProfS+ 5.12M</div>
+          <div id="actualizar42" class="actualizar">ProfS+ 10.24M</div>
+          <div id="actualizar43" class="actualizar">ProfS+ 20.48M</div>
+          <div id="actualizar44" class="actualizar">ProfS+ 40.96M</div>
+          <div id="actualizar45" class="actualizar">ProfS+ 81.92M</div>
+        </div>
+        <div class="sep"></div>
+        <div class="campo">
+          <div id="actualizar46" class="actualizar">Prof+ 1.28M</div>
+          <div id="actualizar47" class="actualizar">Prof+ 2.56M</div>
+          <div id="actualizar48" class="actualizar">Prof+ 5.12M</div>
+          <div id="actualizar49" class="actualizar">Prof+ 10.24M</div>
+          <div id="actualizar50" class="actualizar">Prof+ 20.48M</div>
+          <div id="actualizar51" class="actualizar">Prof+ 40.96M</div>
+          <div id="actualizar52" class="actualizar">Prof+ 81.92M</div>
+          <div id="actualizar53" class="actualizar">Prof+ 163.84M</div>
+          <div id="actualizar54" class="actualizar">Prof+ 327.68M</div>
+        </div>
+        <div class="sep"></div>
+        <div class="campo">
+          <div id="actualizar55" class="actualizar">Baños+ 5.12M</div>
+          <div id="actualizar56" class="actualizar">Baños+ 10.24M</div>
+          <div id="actualizar57" class="actualizar">Baños+ 20.48M</div>
+          <div id="actualizar58" class="actualizar">Baños+ 40.96M</div>
+          <div id="actualizar59" class="actualizar">Baños+ 81.92M</div>
+          <div id="actualizar60" class="actualizar">Baños+ 163.84M</div>
+          <div id="actualizar61" class="actualizar">Baños+ 327.68M</div>
+          <div id="actualizar62" class="actualizar">Baños+ 655.36M</div>
+          <div id="actualizar63" class="actualizar">Baños+ 1310.72M</div>
+        </div>
+        <div class="sep"></div>
+        <div class="campo">
+          <div id="actualizar64" class="actualizar">Decan+ 20.482M</div>
+          <div id="actualizar65" class="actualizar">Decan+ 40.96M</div>
+          <div id="actualizar66" class="actualizar">Decan+ 81.92M</div>
+          <div id="actualizar67" class="actualizar">Decan+ 163.84M</div>
+          <div id="actualizar68" class="actualizar">Decan+ 327.68M</div>
+          <div id="actualizar69" class="actualizar">Decan+ 655.36M</div>
+          <div id="actualizar70" class="actualizar">Decan+ 1310.72M</div>
+          <div id="actualizar71" class="actualizar">Decan+ 2621.44M</div>
+          <div id="actualizar72" class="actualizar">Decan+ 5242.88M</div>
+        </div>
+        <div class="sep"></div>
+        <div class="campo">
+          <div id="actualizar73" class="actualizar">Puent+ 81.92M</div>
+          <div id="actualizar74" class="actualizar">Puent+ 163.84M</div>
+          <div id="actualizar75" class="actualizar">Puent+ 327.68M</div>
+          <div id="actualizar76" class="actualizar">Puent+ 655.36M</div>
+          <div id="actualizar77" class="actualizar">Puent+ 1310.72M</div>
+          <div id="actualizar78" class="actualizar">Puent+ 2621.44M</div>
+          <div id="actualizar79" class="actualizar">Puent+ 5242.88M</div>
+          <div id="actualizar80" class="actualizar">Puent+ 10485.76M</div>
+          <div id="actualizar81" class="actualizar">Puent+ 20971.52M</div>
+        </div>
+        <div class="sep"></div>
+        <div class="campo">
+          <div id="actualizar82" class="actualizar">Dimen+ 327.68M</div>
+          <div id="actualizar83" class="actualizar">Dimen+ 655.36M</div>
+          <div id="actualizar84" class="actualizar">Dimen+ 1310.72M</div>
+          <div id="actualizar85" class="actualizar">Dimen+ 2621.44M</div>
+          <div id="actualizar86" class="actualizar">Dimen+ 5242.88M</div>
+          <div id="actualizar87" class="actualizar">Dimen+ 10485.76M</div>
+          <div id="actualizar88" class="actualizar">Dimen+ 20971.52M</div>
+          <div id="actualizar89" class="actualizar">Dimen+ 41943.04M</div>
+          <div id="actualizar90" class="actualizar">Dimen+ 83886.08M</div>
+        </div>
+        <div class="sep"></div>
+        <div class="campo">
+          <div id="actualizar91" class="actualizar">Fiest+ 1310.72M</div>
+          <div id="actualizar92" class="actualizar">Fiest+ 2621.44M</div>
+          <div id="actualizar93" class="actualizar">Fiest+ 5242.88M</div>
+          <div id="actualizar94" class="actualizar">Fiest+ 10485.76M</div>
+          <div id="actualizar95" class="actualizar">Fiest+ 20971.52M</div>
+          <div id="actualizar96" class="actualizar">Fiest+ 41943.04M</div>
+          <div id="actualizar97" class="actualizar">Fiest+ 83886.08M</div>
+          <div id="actualizar98" class="actualizar">Fiest+ 167772.16M</div>
+          <div id="actualizar99" class="actualizar">Fiest+ 335544.32M</div>
+        </div>
+        <div class="sep"></div>
+      </section>
+      <!--  div.campo
+      div.actualizar#actualizar100 Baños+ 5.12M
+      div.actualizar#actualizar101 Baños+ 10.24M
+      div.actualizar#actualizar102 Baños+ 20.48M
+      div.actualizar#actualizar103 Baños+ 40.96M
+      div.actualizar#actualizar104 Baños+ 81.92M
+      div.actualizar#actualizar105 Baños+ 163.84M
+      div.actualizar#actualizar106 Baños+ 327.68M
+      div.actualizar#actualizar107 Baños+ 655.36M
+      div.actualizar#actualizar108 Baños+ 1310.72M
+      
+      
+      
+      -->
+      <section id="der" class="parte">
+        <div class="explicacion"> <strong>GENERADORES</strong></div>
+        <div class="sep"></div>
+        <div id="update1" class="update">Cafe
+          <p id="coste1">13</p>
+          <p id="unidades1">unidades</p>
+          <p id="numero1">0</p>
+        </div>
+        <div class="sep"> </div>
+        <div id="update2" class="update">Alumnos de Primero
+          <p id="coste2">100</p>
+          <p id="unidades2">unidades</p>
+          <p id="numero2">0</p>
+        </div>
+        <div class="sep"></div>
+        <div id="update3" class="update">Cafetería
+          <p id="coste3">400</p>
+          <p id="unidades3">unidades</p>
+          <p id="numero3">0</p>
+        </div>
+        <div class="sep"></div>
+        <div id="update4" class="update">Porcentaje de mujeres
+          <p id="coste4">1000</p>
+          <p id="unidades4">unidades</p>
+          <p id="numero4">0</p>
+        </div>
+        <div class="sep"></div>
+        <div id="update5" class="update">Profesor Sustituto
+          <p id="coste5">5000</p>
+          <p id="unidades5">unidades</p>
+          <p id="numero5">0</p>
+        </div>
+        <div class="sep"> </div>
+        <div id="update6" class="update">Profesor plasta
+          <p id="coste6">40000</p>
+          <p id="unidades6">unidades</p>
+          <p id="numero6">0</p>
+        </div>
+        <div class="sep"></div>
+        <div id="update7" class="update">Baños
+          <p id="coste7">200000</p>
+          <p id="unidades7">unidades</p>
+          <p id="numero7">0    </p>
+        </div>
+        <div class="sep"></div>
+        <div id="update8" class="update">Decanato 
+          <p id="coste8">1.667 </p>
+          <p id="unidades8">millones</p>
+          <p id="numero8">0 </p>
+        </div>
+        <div class="sep"></div>
+        <div id="update9" class="update">Puente
+          <p id="coste9">123.457</p>
+          <p id="unidades9">millones</p>
+          <p id="numero9">0</p>
+        </div>
+        <div class="sep"></div>
+        <div id="update10" class="update">Dimension-Viernes
+          <p id="coste10">4000</p>
+          <p id="unidades10">millones</p>
+          <p id="numero10">0</p>
+        </div>
+        <div class="sep"></div>
+        <div id="update11" class="update">Fiesta de la Universidad
+          <p id="coste11">75000</p>
+          <p id="unidades11">millones</p>
+          <p id="numero11">0</p>
+        </div>
+        <div class="sep"></div>
+        <div class="update"></div>
+      </section>
+      <footer><a href="http://ccglp.itch.io" target="_blank">Made by CCGLP</a></footer>
+      <audio loop="loop" autoplay="autoplay">
+        <source src="background_sound.mp3" type="audio/mpeg"/>
+      </audio>
+    </div>
     <script src="/lib/app.js"></script>
     <script src="/lib/updateWarning.js"></script>
     <script src="/lib/googleAnalytics.js"></script>
+    <script src="/lib/menu/menu.js"></script>
   </body>
 </html>

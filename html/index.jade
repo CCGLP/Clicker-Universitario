@@ -6,241 +6,250 @@ html
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
     script(src="/lib/sweetalert.min.js")
     link(rel="stylesheet" href="/css/sweetalert.css")
+    link(rel="stylesheet" href="/lib/menu/jquery.mmenu.all.css")
+    script(src="/lib/menu/jquery.mmenu.min.all.js")
     meta(charset="utf-8")
     meta(name="viewport" content="initial-scale=1, user-scalable=no")
     
     
     title 0
   body
-    header 
-      div#defaultSkin   NORMAL&nbsp&nbsp
-      div#esne ESNE&nbsp  &nbsp  
-      div#fic FIC
-      div#reset RESET
-      div#save  SAVE    &nbsp &nbsp 
-      div#mute
-        img(src="/imagenes/mute_icon.png")
-    section#filtro
-    section#izq
-      div#puntos
-        p
-          strong#puntostrue
-          normal#unidades unidades
-        p 
-          strong UP
-        p per second: 
-          stong#dps 0
-          normal#udps unidades
-        
-        img#ardilla(src="/imagenes/ardilla.png")
+    nav#menu
+      ul
+        li#defaultSkin.link   NORMAL&nbsp&nbsp
+        li#esne.link ESNE&nbsp  &nbsp  
+        li#fic.link FIC
+        li#reset.link RESET
+        li#save.link  SAVE    &nbsp &nbsp 
+        li#mute.link
+          img(src="/imagenes/mute_icon.png")
+    
+    div.todo  
+      div.cosa
+        a(href="#menu") 
+          img(src="/imagenes/menu.png")
+      section#filtro
+      section#izq.parte
+        div#puntos
+          p
+            strong#puntostrue
+            normal#unidades unidades
+          p 
+            strong UP
+          p per second: 
+            stong#dps 0
+            normal#udps unidades
           
-    section#mid
-      div.explicacion
-        strong UPGRADES GENERADORES
-      div.sep
-      div.campo
-        div.actualizar#actualizar1 Café+ 1000
-        div.actualizar#actualizar2 Café+ 2000
-        div.actualizar#actualizar3 Café+ 4000
-        div.actualizar#actualizar4 Café+ 8000
-        div.actualizar#actualizar5 Café+ 16000
-        div.actualizar#actualizar6 Café+ 32000
-        div.actualizar#actualizar7 Café+ 64000
-        div.actualizar#actualizar8 Café+ 128000
-        div.actualizar#actualizar9 Café+ 2560000
-      
-      div.sep
-      div.campo
-        div.actualizar#actualizar10 Alum2 5000
-        div.actualizar#actualizar11 Alum3 10000
-        div.actualizar#actualizar12 Alum4 20000
-        div.actualizar#actualizar13 Alum5 40000
-        div.actualizar#actualizar14 Alum6 80000
-        div.actualizar#actualizar15 Alum7 160000
-        div.actualizar#actualizar16 Alum8 320000
-        div.actualizar#actualizar17 Alum9 640000
-        div.actualizar#actualizar18 Alumni 1.28M
-      div.sep
-      div.campo
-        div.actualizar#actualizar19 Cafet+ 20000
-        div.actualizar#actualizar20 Cafet+ 40000
-        div.actualizar#actualizar21 Cafet+ 80000
-        div.actualizar#actualizar22 Cafet+ 160000
-        div.actualizar#actualizar23 Cafet+ 320000
-        div.actualizar#actualizar24 Cafet+ 640000
-        div.actualizar#actualizar25 Cafet+ 1.28M
-        div.actualizar#actualizar26 Cafet+ 2.56M
-        div.actualizar#actualizar27 Cafet+ 5.12M
-      div.sep
-      div.campo
-        div.actualizar#actualizar28 Discrimin- 80000
-        div.actualizar#actualizar29 Discrimin- 160000
-        div.actualizar#actualizar30 Discrimin- 320000
-        div.actualizar#actualizar31 Discrimin- 640000
-        div.actualizar#actualizar32 Discrimin- 1.28M
-        div.actualizar#actualizar33 Discrimin- 2.56M
-        div.actualizar#actualizar34 Discrimin- 5.12M
-        div.actualizar#actualizar35 Discrimin- 10.24M
-        div.actualizar#actualizar36 Discrimin- 20.48M
-      div.sep
-      div.campo
-        div.actualizar#actualizar37 ProfS+ 320000
-        div.actualizar#actualizar38 ProfS+ 640000
-        div.actualizar#actualizar39 ProfS+ 1.28M
-        div.actualizar#actualizar40 ProfS+ 2.56M
-        div.actualizar#actualizar41 ProfS+ 5.12M
-        div.actualizar#actualizar42 ProfS+ 10.24M
-        div.actualizar#actualizar43 ProfS+ 20.48M
-        div.actualizar#actualizar44 ProfS+ 40.96M
-        div.actualizar#actualizar45 ProfS+ 81.92M
-      div.sep
-      div.campo
-        div.actualizar#actualizar46 Prof+ 1.28M
-        div.actualizar#actualizar47 Prof+ 2.56M
-        div.actualizar#actualizar48 Prof+ 5.12M
-        div.actualizar#actualizar49 Prof+ 10.24M
-        div.actualizar#actualizar50 Prof+ 20.48M
-        div.actualizar#actualizar51 Prof+ 40.96M
-        div.actualizar#actualizar52 Prof+ 81.92M
-        div.actualizar#actualizar53 Prof+ 163.84M
-        div.actualizar#actualizar54 Prof+ 327.68M
-      div.sep
-      div.campo
-        div.actualizar#actualizar55 Baños+ 5.12M
-        div.actualizar#actualizar56 Baños+ 10.24M
-        div.actualizar#actualizar57 Baños+ 20.48M
-        div.actualizar#actualizar58 Baños+ 40.96M
-        div.actualizar#actualizar59 Baños+ 81.92M
-        div.actualizar#actualizar60 Baños+ 163.84M
-        div.actualizar#actualizar61 Baños+ 327.68M
-        div.actualizar#actualizar62 Baños+ 655.36M
-        div.actualizar#actualizar63 Baños+ 1310.72M
-      div.sep
-      div.campo
-        div.actualizar#actualizar64 Decan+ 20.482M
-        div.actualizar#actualizar65 Decan+ 40.96M
-        div.actualizar#actualizar66 Decan+ 81.92M
-        div.actualizar#actualizar67 Decan+ 163.84M
-        div.actualizar#actualizar68 Decan+ 327.68M
-        div.actualizar#actualizar69 Decan+ 655.36M
-        div.actualizar#actualizar70 Decan+ 1310.72M
-        div.actualizar#actualizar71 Decan+ 2621.44M
-        div.actualizar#actualizar72 Decan+ 5242.88M
-      div.sep
-      div.campo
-        div.actualizar#actualizar73 Puent+ 81.92M
-        div.actualizar#actualizar74 Puent+ 163.84M
-        div.actualizar#actualizar75 Puent+ 327.68M
-        div.actualizar#actualizar76 Puent+ 655.36M
-        div.actualizar#actualizar77 Puent+ 1310.72M
-        div.actualizar#actualizar78 Puent+ 2621.44M
-        div.actualizar#actualizar79 Puent+ 5242.88M
-        div.actualizar#actualizar80 Puent+ 10485.76M
-        div.actualizar#actualizar81 Puent+ 20971.52M
-      div.sep
-      div.campo
-        div.actualizar#actualizar82 Dimen+ 327.68M
-        div.actualizar#actualizar83 Dimen+ 655.36M
-        div.actualizar#actualizar84 Dimen+ 1310.72M
-        div.actualizar#actualizar85 Dimen+ 2621.44M
-        div.actualizar#actualizar86 Dimen+ 5242.88M
-        div.actualizar#actualizar87 Dimen+ 10485.76M
-        div.actualizar#actualizar88 Dimen+ 20971.52M
-        div.actualizar#actualizar89 Dimen+ 41943.04M
-        div.actualizar#actualizar90 Dimen+ 83886.08M
-      div.sep
-      div.campo
-        div.actualizar#actualizar91 Fiest+ 1310.72M
-        div.actualizar#actualizar92 Fiest+ 2621.44M
-        div.actualizar#actualizar93 Fiest+ 5242.88M
-        div.actualizar#actualizar94 Fiest+ 10485.76M
-        div.actualizar#actualizar95 Fiest+ 20971.52M
-        div.actualizar#actualizar96 Fiest+ 41943.04M
-        div.actualizar#actualizar97 Fiest+ 83886.08M
-        div.actualizar#actualizar98 Fiest+ 167772.16M
-        div.actualizar#actualizar99 Fiest+ 335544.32M
-      div.sep
-    //  div.campo
-        div.actualizar#actualizar100 Baños+ 5.12M
-        div.actualizar#actualizar101 Baños+ 10.24M
-        div.actualizar#actualizar102 Baños+ 20.48M
-        div.actualizar#actualizar103 Baños+ 40.96M
-        div.actualizar#actualizar104 Baños+ 81.92M
-        div.actualizar#actualizar105 Baños+ 163.84M
-        div.actualizar#actualizar106 Baños+ 327.68M
-        div.actualizar#actualizar107 Baños+ 655.36M
-        div.actualizar#actualizar108 Baños+ 1310.72M
-      
-      
+          img#ardilla(src="/imagenes/ardilla.png")
+            
+      section#mid.parte
+        div.explicacion
+          strong UPGRADES GENERADORES
+        div.sep
+        div.campo
+          div.actualizar#actualizar1 Café+ 1000
+          div.actualizar#actualizar2 Café+ 2000
+          div.actualizar#actualizar3 Café+ 4000
+          div.actualizar#actualizar4 Café+ 8000
+          div.actualizar#actualizar5 Café+ 16000
+          div.actualizar#actualizar6 Café+ 32000
+          div.actualizar#actualizar7 Café+ 64000
+          div.actualizar#actualizar8 Café+ 128000
+          div.actualizar#actualizar9 Café+ 2560000
         
-    section#der
-      div.explicacion 
-        strong GENERADORES
-      div.sep
-      div.update#update1 Cafe
-        p#coste1 13
-        p#unidades1 unidades
-        p#numero1 0
+        div.sep
+        div.campo
+          div.actualizar#actualizar10 Alum2 5000
+          div.actualizar#actualizar11 Alum3 10000
+          div.actualizar#actualizar12 Alum4 20000
+          div.actualizar#actualizar13 Alum5 40000
+          div.actualizar#actualizar14 Alum6 80000
+          div.actualizar#actualizar15 Alum7 160000
+          div.actualizar#actualizar16 Alum8 320000
+          div.actualizar#actualizar17 Alum9 640000
+          div.actualizar#actualizar18 Alumni 1.28M
+        div.sep
+        div.campo
+          div.actualizar#actualizar19 Cafet+ 20000
+          div.actualizar#actualizar20 Cafet+ 40000
+          div.actualizar#actualizar21 Cafet+ 80000
+          div.actualizar#actualizar22 Cafet+ 160000
+          div.actualizar#actualizar23 Cafet+ 320000
+          div.actualizar#actualizar24 Cafet+ 640000
+          div.actualizar#actualizar25 Cafet+ 1.28M
+          div.actualizar#actualizar26 Cafet+ 2.56M
+          div.actualizar#actualizar27 Cafet+ 5.12M
+        div.sep
+        div.campo
+          div.actualizar#actualizar28 Discrimin- 80000
+          div.actualizar#actualizar29 Discrimin- 160000
+          div.actualizar#actualizar30 Discrimin- 320000
+          div.actualizar#actualizar31 Discrimin- 640000
+          div.actualizar#actualizar32 Discrimin- 1.28M
+          div.actualizar#actualizar33 Discrimin- 2.56M
+          div.actualizar#actualizar34 Discrimin- 5.12M
+          div.actualizar#actualizar35 Discrimin- 10.24M
+          div.actualizar#actualizar36 Discrimin- 20.48M
+        div.sep
+        div.campo
+          div.actualizar#actualizar37 ProfS+ 320000
+          div.actualizar#actualizar38 ProfS+ 640000
+          div.actualizar#actualizar39 ProfS+ 1.28M
+          div.actualizar#actualizar40 ProfS+ 2.56M
+          div.actualizar#actualizar41 ProfS+ 5.12M
+          div.actualizar#actualizar42 ProfS+ 10.24M
+          div.actualizar#actualizar43 ProfS+ 20.48M
+          div.actualizar#actualizar44 ProfS+ 40.96M
+          div.actualizar#actualizar45 ProfS+ 81.92M
+        div.sep
+        div.campo
+          div.actualizar#actualizar46 Prof+ 1.28M
+          div.actualizar#actualizar47 Prof+ 2.56M
+          div.actualizar#actualizar48 Prof+ 5.12M
+          div.actualizar#actualizar49 Prof+ 10.24M
+          div.actualizar#actualizar50 Prof+ 20.48M
+          div.actualizar#actualizar51 Prof+ 40.96M
+          div.actualizar#actualizar52 Prof+ 81.92M
+          div.actualizar#actualizar53 Prof+ 163.84M
+          div.actualizar#actualizar54 Prof+ 327.68M
+        div.sep
+        div.campo
+          div.actualizar#actualizar55 Baños+ 5.12M
+          div.actualizar#actualizar56 Baños+ 10.24M
+          div.actualizar#actualizar57 Baños+ 20.48M
+          div.actualizar#actualizar58 Baños+ 40.96M
+          div.actualizar#actualizar59 Baños+ 81.92M
+          div.actualizar#actualizar60 Baños+ 163.84M
+          div.actualizar#actualizar61 Baños+ 327.68M
+          div.actualizar#actualizar62 Baños+ 655.36M
+          div.actualizar#actualizar63 Baños+ 1310.72M
+        div.sep
+        div.campo
+          div.actualizar#actualizar64 Decan+ 20.482M
+          div.actualizar#actualizar65 Decan+ 40.96M
+          div.actualizar#actualizar66 Decan+ 81.92M
+          div.actualizar#actualizar67 Decan+ 163.84M
+          div.actualizar#actualizar68 Decan+ 327.68M
+          div.actualizar#actualizar69 Decan+ 655.36M
+          div.actualizar#actualizar70 Decan+ 1310.72M
+          div.actualizar#actualizar71 Decan+ 2621.44M
+          div.actualizar#actualizar72 Decan+ 5242.88M
+        div.sep
+        div.campo
+          div.actualizar#actualizar73 Puent+ 81.92M
+          div.actualizar#actualizar74 Puent+ 163.84M
+          div.actualizar#actualizar75 Puent+ 327.68M
+          div.actualizar#actualizar76 Puent+ 655.36M
+          div.actualizar#actualizar77 Puent+ 1310.72M
+          div.actualizar#actualizar78 Puent+ 2621.44M
+          div.actualizar#actualizar79 Puent+ 5242.88M
+          div.actualizar#actualizar80 Puent+ 10485.76M
+          div.actualizar#actualizar81 Puent+ 20971.52M
+        div.sep
+        div.campo
+          div.actualizar#actualizar82 Dimen+ 327.68M
+          div.actualizar#actualizar83 Dimen+ 655.36M
+          div.actualizar#actualizar84 Dimen+ 1310.72M
+          div.actualizar#actualizar85 Dimen+ 2621.44M
+          div.actualizar#actualizar86 Dimen+ 5242.88M
+          div.actualizar#actualizar87 Dimen+ 10485.76M
+          div.actualizar#actualizar88 Dimen+ 20971.52M
+          div.actualizar#actualizar89 Dimen+ 41943.04M
+          div.actualizar#actualizar90 Dimen+ 83886.08M
+        div.sep
+        div.campo
+          div.actualizar#actualizar91 Fiest+ 1310.72M
+          div.actualizar#actualizar92 Fiest+ 2621.44M
+          div.actualizar#actualizar93 Fiest+ 5242.88M
+          div.actualizar#actualizar94 Fiest+ 10485.76M
+          div.actualizar#actualizar95 Fiest+ 20971.52M
+          div.actualizar#actualizar96 Fiest+ 41943.04M
+          div.actualizar#actualizar97 Fiest+ 83886.08M
+          div.actualizar#actualizar98 Fiest+ 167772.16M
+          div.actualizar#actualizar99 Fiest+ 335544.32M
+        div.sep
+      //  div.campo
+          div.actualizar#actualizar100 Baños+ 5.12M
+          div.actualizar#actualizar101 Baños+ 10.24M
+          div.actualizar#actualizar102 Baños+ 20.48M
+          div.actualizar#actualizar103 Baños+ 40.96M
+          div.actualizar#actualizar104 Baños+ 81.92M
+          div.actualizar#actualizar105 Baños+ 163.84M
+          div.actualizar#actualizar106 Baños+ 327.68M
+          div.actualizar#actualizar107 Baños+ 655.36M
+          div.actualizar#actualizar108 Baños+ 1310.72M
         
-      div.sep 
-      div.update#update2 Alumnos de Primero
-        p#coste2 100
-        p#unidades2 unidades
-        p#numero2 0
-      div.sep
-      div.update#update3 Cafetería
-        p#coste3 400
-        p#unidades3 unidades
-        p#numero3 0
-      div.sep
-      div.update#update4 Porcentaje de mujeres
-        p#coste4 1000
-        p#unidades4 unidades
-        p#numero4 0
-      div.sep
-      div.update#update5 Profesor Sustituto
-        p#coste5 5000
-        p#unidades5 unidades
-        p#numero5 0
-      div.sep 
-      div.update#update6 Profesor plasta
-        p#coste6 40000
-        p#unidades6 unidades
-        p#numero6 0
-      div.sep
-      div.update#update7 Baños
-        p#coste7 200000
-        p#unidades7 unidades
-        p#numero7 0    
-      div.sep
-      div.update#update8 Decanato 
-        p#coste8 1.667 
-        p#unidades8 millones
-        p#numero8 0 
-      div.sep
-      div.update#update9 Puente
-        p#coste9 123.457
-        p#unidades9 millones
-        p#numero9 0
-      div.sep
-      div.update#update10 Dimension-Viernes
-        p#coste10 4000
-        p#unidades10 millones
-        p#numero10 0
-      div.sep
-      div.update#update11 Fiesta de la Universidad
-        p#coste11 75000
-        p#unidades11 millones
-        p#numero11 0
-      div.sep
-      div.update
-    footer
-      a(href="http://ccglp.itch.io" target="_blank") Made by CCGLP
-    audio(loop autoplay )
-      source(src="background_sound.mp3" type ="audio/mpeg")
+        
+          
+      section#der.parte
+        div.explicacion 
+          strong GENERADORES
+        div.sep
+        div.update#update1 Cafe
+          p#coste1 13
+          p#unidades1 unidades
+          p#numero1 0
+          
+        div.sep 
+        div.update#update2 Alumnos de Primero
+          p#coste2 100
+          p#unidades2 unidades
+          p#numero2 0
+        div.sep
+        div.update#update3 Cafetería
+          p#coste3 400
+          p#unidades3 unidades
+          p#numero3 0
+        div.sep
+        div.update#update4 Porcentaje de mujeres
+          p#coste4 1000
+          p#unidades4 unidades
+          p#numero4 0
+        div.sep
+        div.update#update5 Profesor Sustituto
+          p#coste5 5000
+          p#unidades5 unidades
+          p#numero5 0
+        div.sep 
+        div.update#update6 Profesor plasta
+          p#coste6 40000
+          p#unidades6 unidades
+          p#numero6 0
+        div.sep
+        div.update#update7 Baños
+          p#coste7 200000
+          p#unidades7 unidades
+          p#numero7 0    
+        div.sep
+        div.update#update8 Decanato 
+          p#coste8 1.667 
+          p#unidades8 millones
+          p#numero8 0 
+        div.sep
+        div.update#update9 Puente
+          p#coste9 123.457
+          p#unidades9 millones
+          p#numero9 0
+        div.sep
+        div.update#update10 Dimension-Viernes
+          p#coste10 4000
+          p#unidades10 millones
+          p#numero10 0
+        div.sep
+        div.update#update11 Fiesta de la Universidad
+          p#coste11 75000
+          p#unidades11 millones
+          p#numero11 0
+        div.sep
+        div.update
+      footer
+        a(href="http://ccglp.itch.io" target="_blank") Made by CCGLP
+      audio(loop autoplay )
+        source(src="background_sound.mp3" type ="audio/mpeg")
     script(src="/lib/app.js")
     script(src="/lib/updateWarning.js")
     script(src="/lib/googleAnalytics.js")
+    script(src="/lib/menu/menu.js")
     
       
   

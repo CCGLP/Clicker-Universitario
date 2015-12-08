@@ -17,23 +17,25 @@ html {
     font-size: 8px;
   }
 }
+div.cosa a {
+  font-size: 1em;
+}
 section {
   background-color: #ff0;
 }
-header {
-  width: 100vw;
-  height: 1.4em;
-  background-color: #fff;
-  z-index: 110;
+.cosa {
+  position: absolute;
+  top: 0.2em;
+  left: 0.2em;
 }
-header div {
-  float: left;
-  font-size: 1.4em;
+.cosa a img {
+  width: 3em;
+}
+.link {
   cursor: pointer;
   cursor: hand;
 }
 #mute {
-  margin-left: 2em;
   width: 1.4em;
   height: 100%;
 }
@@ -45,19 +47,9 @@ img {
   cursor: pointer;
   cursor: hand;
 }
-#reset {
-  float: right;
-}
-#save {
-  float: right;
-}
 #izq {
   background-color: #f00;
-  position: absolute;
-  left: 0px;
   width: 32%;
-  top: 1.4em;
-  height: 95vh;
 }
 #filtro {
   background-color: #ff69b4;
@@ -73,10 +65,6 @@ img {
 /*CSS derecha*/
 #der {
   background-color: #ff0;
-  position: absolute;
-  left: 67%;
-  top: 1.4em;
-  height: 95vh;
   width: 32%;
   overflow-y: scroll;
 }
@@ -91,15 +79,12 @@ img {
 #puntos {
   text-align: center;
   font-size: 1.5em;
+  margin-top: 2em;
 }
 /* CSS MEDIO*/
 #mid {
   background-color: #808080;
-  position: absolute;
-  left: 33%;
   width: 33%;
-  top: 1.4em;
-  height: 95vh;
   overflow-y: scroll;
 }
 /*Tambien en der*/
@@ -132,6 +117,10 @@ footer {
   bottom: 0px;
   font-size: 1.1em;
 }
+.parte {
+  float: left;
+  height: 100vh;
+}
 /*
 Código ardilla animación. (TOP)
 */
@@ -144,4 +133,8 @@ Código ardilla animación. (TOP)
 #ardilla:active {
   width: 90%;
   height: 15%;
+}
+.todo {
+  width: 100vw;
+  height: 100vh;
 }
