@@ -1,4 +1,4 @@
-var versionActual = "0.0666" //CODENAME SAM DEVIL
+var versionActual = "0.0777" //CODENAME LITTLESAM
 
 $(document).ready(function(){
 

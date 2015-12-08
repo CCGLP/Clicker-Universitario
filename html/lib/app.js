@@ -56,6 +56,11 @@ if (localStorage.getItem ("save") == null){
  auxCosteUpgrade(27,36,80000)
  auxCosteUpgrade(36,45,320000)
  auxCosteUpgrade(45,54,1.28)
+ auxCosteUpgrade(54,63,5.12)
+ auxCosteUpgrade(63,72,20.48)
+ auxCosteUpgrade(72,81,81.92)
+ auxCosteUpgrade(81,90,327.68)
+ auxCosteUpgrade(90,99,1310.72)
   //Aux function para los costesUpgrades
   function auxCosteUpgrade(inicial, final,costeInicial){
     var multiplicador = 1
@@ -79,7 +84,7 @@ if (localStorage.getItem ("save") == null){
   unCostesUpgrades(24,26,1)
   unCostesUpgrades(31,35,1)
   unCostesUpgrades(38,44,1)
-  unCostesUpgrades(45,53,1)
+  unCostesUpgrades(45,100,1)
 
   //Funcion Auxiliar de unidades Costes upgrades
   function unCostesUpgrades(numero, final, unidad){
@@ -125,8 +130,9 @@ if (localStorage.getItem ("save") == null){
       UNIDADES: {valor:0, nombre:"unidades"},
       MILLONES: {valor:1, nombre:"millones"},
       BILLONES: {valor:2, nombre:"billones"},
-      TRILLONES:{valor:3, nombre:"trillones"}
-
+      TRILLONES:{valor:3, nombre:"trillones"},
+      CUATRILLONES:{valor:4, nombre:"cuatrillones"},
+      QUINTILLONES:{valor:5,nombre:"quintillones"}
   }
 
 var objeto = {
@@ -291,8 +297,14 @@ function manejarNombres(un){
       break;
 
     case 3:
-      return manejarNombres.TRILLONES.nombre
+      return manejoNombres.TRILLONES.nombre
       break
+    case 4:
+      return manejoNombres.CUATRILLONES.nombre
+      break;
+    case 5:
+      return manejoNombres.QUINTILLONES.nombre
+      break;
     default:
       return "unknown"
   }
@@ -605,6 +617,147 @@ $("#actualizar53").on("click", function(){
 $("#actualizar54").on("click", function(){
   manejoActualizar(53,5,0,2) //Numero de upgrade. Numero de opción. Aumento
 })
+//*************************************************************
+$("#actualizar55").on("click", function(){
+  manejoActualizar(54,6,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar56").on("click", function(){
+  manejoActualizar(55,6,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar57").on("click", function(){
+  manejoActualizar(56,6,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar58").on("click", function(){
+  manejoActualizar(57,6,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar59").on("click", function(){
+  manejoActualizar(58,6,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar60").on("click", function(){
+  manejoActualizar(59,6,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar61").on("click", function(){
+  manejoActualizar(60,6,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar62").on("click", function(){
+  manejoActualizar(61,6,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar63").on("click", function(){
+  manejoActualizar(62,6,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+//**************************************
+$("#actualizar64").on("click", function(){
+  manejoActualizar(63,7,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar65").on("click", function(){
+  manejoActualizar(64,7,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar66").on("click", function(){
+  manejoActualizar(65,7,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar67").on("click", function(){
+  manejoActualizar(66,7,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar68").on("click", function(){
+  manejoActualizar(67,7,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar69").on("click", function(){
+  manejoActualizar(68,7,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar70").on("click", function(){
+  manejoActualizar(69,7,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar71").on("click", function(){
+  manejoActualizar(70,7,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar72").on("click", function(){
+  manejoActualizar(71,7,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+//**************************************************
+$("#actualizar73").on("click", function(){
+  manejoActualizar(72,8,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar74").on("click", function(){
+  manejoActualizar(73,8,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar75").on("click", function(){
+  manejoActualizar(74,8,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar76").on("click", function(){
+  manejoActualizar(75,8,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar77").on("click", function(){
+  manejoActualizar(76,8,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar78").on("click", function(){
+  manejoActualizar(77,8,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar79").on("click", function(){
+  manejoActualizar(78,8,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar80").on("click", function(){
+  manejoActualizar(79,8,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar81").on("click", function(){
+  manejoActualizar(80,8,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+//****************************************************
+$("#actualizar82").on("click", function(){
+  manejoActualizar(81,9,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar83").on("click", function(){
+  manejoActualizar(82,9,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar84").on("click", function(){
+  manejoActualizar(83,9,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar85").on("click", function(){
+  manejoActualizar(84,9,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar86").on("click", function(){
+  manejoActualizar(85,9,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar87").on("click", function(){
+  manejoActualizar(86,9,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar88").on("click", function(){
+  manejoActualizar(87,9,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar89").on("click", function(){
+  manejoActualizar(88,9,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar90").on("click", function(){
+  manejoActualizar(89,9,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+//***************************************************
+$("#actualizar91").on("click", function(){
+  manejoActualizar(90,10,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar92").on("click", function(){
+  manejoActualizar(91,10,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar93").on("click", function(){
+  manejoActualizar(92,10,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar94").on("click", function(){
+  manejoActualizar(93,10,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar95").on("click", function(){
+  manejoActualizar(94,10,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar96").on("click", function(){
+  manejoActualizar(95,10,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar97").on("click", function(){
+  manejoActualizar(96,10,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar98").on("click", function(){
+  manejoActualizar(97,10,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+$("#actualizar99").on("click", function(){
+  manejoActualizar(98,10,0,2) //Numero de upgrade. Numero de opción. Aumento
+})
+
 //************************************************
 //Manejo de Skins
 $("#esne").on("click",function(){
