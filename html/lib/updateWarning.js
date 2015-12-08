@@ -1,4 +1,4 @@
-var versionActual = "0.0777" //CODENAME LITTLESAM
+var versionActual = "0.0888" //CODENAME NUKESAM
 
 $(document).ready(function(){
 

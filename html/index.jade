@@ -28,6 +28,8 @@ html
       div.cosa
         a(href="#menu") 
           img(src="/imagenes/menu.png")
+      div#porcentaje 
+        strong#porcentajeS %
       section#filtro
       section#izq.parte
         div#puntos
@@ -189,63 +191,86 @@ html
           p#coste1 13
           p#unidades1 unidades
           p#numero1 0
+          div.spawnHover 
+            p El café es el recurso más preciado en una universidad
           
         div.sep 
         div.update#update2 Alumnos de Primero
           p#coste2 100
           p#unidades2 unidades
           p#numero2 0
+          div.spawnHover 
+            p Miralos, están llenos de vida.
         div.sep
         div.update#update3 Cafetería
           p#coste3 400
           p#unidades3 unidades
           p#numero3 0
+          div.spawnHover 
+            p Miles de mentes se reúnen aquí. A cultivarse o no.
         div.sep
         div.update#update4 Porcentaje de mujeres
           p#coste4 1000
           p#unidades4 unidades
           p#numero4 0
+          div.spawnHover 
+            p Suele mejorar cuando la discriminación es menor
         div.sep
         div.update#update5 Profesor Sustituto
           p#coste5 5000
           p#unidades5 unidades
           p#numero5 0
+          div.spawnHover 
+            p Entes mágicos con valores morales claros
         div.sep 
         div.update#update6 Profesor plasta
           p#coste6 40000
           p#unidades6 unidades
           p#numero6 0
+          div.spawnHover 
+            p No son realmente plastas. Son díficiles de entender
         div.sep
         div.update#update7 Baños
           p#coste7 200000
           p#unidades7 unidades
           p#numero7 0    
+          div.spawnHover 
+            p Siempre sucios. Es parte de su encanto
         div.sep
         div.update#update8 Decanato 
           p#coste8 1.667 
           p#unidades8 millones
           p#numero8 0 
+          div.spawnHover 
+            p Suele imponer mucho. Hasta que ya lo has visitado 10 veces
         div.sep
         div.update#update9 Puente
           p#coste9 123.457
           p#unidades9 millones
           p#numero9 0
+          div.spawnHover 
+            p Este texto fue creado durante un Puente
         div.sep
         div.update#update10 Dimension-Viernes
           p#coste10 4000
           p#unidades10 millones
           p#numero10 0
+          div.spawnHover 
+            p Tiene un hermano mayor conocido como "El triángulo de las Bérmudas"
         div.sep
         div.update#update11 Fiesta de la Universidad
           p#coste11 75000
           p#unidades11 millones
           p#numero11 0
-        div.sep
-        div.update
+          div.spawnHover 
+            p Cuenta la leyenda que 3 de cada 4 fiestas acaban bien
+      div#rightmenu.parte
+        
+        
       footer
         a(href="http://ccglp.itch.io" target="_blank") Made by CCGLP
-      audio(loop autoplay )
-        source(src="background_sound.mp3" type ="audio/mpeg")
+    audio(loop autoplay )
+      source(src="background_sound.mp3" type ="audio/mpeg")
     script(src="/lib/app.js")
     script(src="/lib/updateWarning.js")
     script(src="/lib/googleAnalytics.js")

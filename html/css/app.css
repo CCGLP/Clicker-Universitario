@@ -31,6 +31,12 @@ section {
 .cosa a img {
   width: 3em;
 }
+#porcentaje {
+  position: absolute;
+  top: 0;
+  left: 22vw;
+  font-size: 2.4em;
+}
 .link {
   cursor: pointer;
   cursor: hand;
@@ -84,7 +90,7 @@ img {
 /* CSS MEDIO*/
 #mid {
   background-color: #808080;
-  width: 33%;
+  width: 32%;
   overflow-y: scroll;
 }
 /*Tambien en der*/
@@ -121,6 +127,10 @@ footer {
   float: left;
   height: 100vh;
 }
+#rightmenu {
+  width: 3vw;
+  background-color: #808080;
+}
 /*
 Código ardilla animación. (TOP)
 */
@@ -137,4 +147,18 @@ Código ardilla animación. (TOP)
 .todo {
   width: 100vw;
   height: 100vh;
+}
+/*
+Relacionado con los textos explicativos (contextuales)
+*/
+.update:hover .spawnHover {
+  display: block;
+}
+.spawnHover {
+  font-size: 1.3em;
+  background-color: #fff;
+  position: relative;
+  bottom: 4em;
+  left: 0;
+  display: none;
 }

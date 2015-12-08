@@ -196,6 +196,7 @@ function fixSave(){
   }
 
   $("#filtro").css("opacity", casitas[3]*0.01 )
+  $("#porcentajeS").html(casitas[3]+ "%")
 
   limpiarUpgrades()
 }
@@ -228,12 +229,21 @@ function manejoActualizar (nupgrade,numero, operacion, aumento){
     if (valorDps == unidadesDpsCasitas[numero]){
       dps -= dpsupdate[numero] * casitas[numero]
       dpsupdate[numero] *= aumento
+      console.log("hola")
       dps += dpsupdate[numero] * casitas[numero]
     }
-    else if (valorDps-unidadesDpsCasitas[numero] == 1){
+    else if (valorDps-unidadesDpsCasitas[numero] >= 1){
         dps-= dpsupdate[numero]/constanteMillon * casitas[numero]
         dpsupdate[numero]*=aumento
+        console.log("OTRA RAMA")
         dps+= dpsupdate[numero]/constanteMillon * casitas[numero]
+    }
+    else{
+      dps-dpsupdate[numero] * constanteMillon * casitas[numero]
+      dpsupdate[numero] *= aumento
+      console.log("WORKING")
+      dps+= dpsupdate[numero]*constanteMillon * casitas[numero]
+
     }
 
 
@@ -356,6 +366,7 @@ function mujeres(numero){
   if (casitas[numero]<50){
     manejoCasitas(numero)
     $("#filtro").css("opacity", casitas[3]*0.01 )
+    $("#porcentajeS").html(casitas[3]+ "%")
   }
 }
 

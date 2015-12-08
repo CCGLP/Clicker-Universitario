@@ -26,6 +26,12 @@ section
   left 0.2em
 .cosa a img
   width 3em
+
+#porcentaje
+  position absolute
+  top 0
+  left 22vw
+  font-size 2.4em
 .link
   cursor pointer
   cursor hand
@@ -88,7 +94,7 @@ img
   background-color grey
   //  position absolute
   //  left 33%
-  width 33%
+  width 32%
   //  top 1.4em
   overflow-y scroll
 
@@ -126,6 +132,9 @@ footer
 .parte
   float left
   height 100vh
+#rightmenu
+  width 3vw
+  background-color grey
 /*
 Código ardilla animación. (TOP)
 */
@@ -144,3 +153,18 @@ Código ardilla animación. (TOP)
 .todo
   width 100vw
   height 100vh
+
+
+
+/*
+Relacionado con los textos explicativos (contextuales)
+*/
+.update:hover .spawnHover
+  display block
+.spawnHover
+  font-size 1.3em
+  background-color white
+  position relative
+  bottom 4em
+  left 0
+  display none
