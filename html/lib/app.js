@@ -9,6 +9,10 @@ if (localStorage.getItem ("save") == null){
   var valorUnidades = 0
   var constanteMillon = 1000000
   var valorDps = 0
+  var dpsArdilla = 1
+  var valorDpsArdilla = 0
+  var costeUpgradeArdilla = 1000
+  var unidadesCosteUpgradeArdilla = 0
   //--------------------------------------------------
 
 
@@ -153,6 +157,10 @@ var objeto = {
   costeInicial,
   multiplicador,
   existenciaUpgrade,
+  dpsArdilla,
+  valorDpsArdilla,
+  costeUpgradeArdilla,
+  unidadesCosteUpgradeArdilla
 }
 
   localStorage.setItem("save", JSON.stringify(objeto))
@@ -177,6 +185,10 @@ else{ // CARGA DEL LOCALSTORAGE
   var costeInicial = objeto.costeInicial
   var multiplicador = objeto.multiplicador
   var existenciaUpgrade = objeto.existenciaUpgrade
+  var dpsArdilla = objeto.dpsArdilla
+  var valorDpsArdilla = objeto.valorDpsArdilla
+  var costeUpgradeArdilla = objeto.costeUpgradeArdilla
+  var unidadesCosteUpgradeArdilla = objeto.unidadesCosteUpgradeArdilla
   fixSave()
 }
 
@@ -186,6 +198,7 @@ function fixSave(){
   var aux2 ="#unidades"
   $("#dps").html(dps.toFixed(1))
   $("#udps").html(manejarNombres(valorDps))
+  $("#updateActual").html(costeUpgradeArdilla)
   //CUIDADO SI CAMBIAS EL NUMERO DE GENERADORES EN LO SIGUIENTE
   for (lamiticai =1; lamiticai<=11; lamiticai++){
     $(aux+lamiticai).html(casitas[lamiticai-1])
@@ -389,6 +402,38 @@ else {
 
 }
 
+
+function upArdilla(){
+  if (banco >= costeUpgradeArdilla &&valorUnidades == unidadesCosteUpgradeArdilla ||
+   (valorUnidades > unidadesCosteUpgradeArdilla && banco * constanteMillon > costeUpgradeArdilla)){
+     dpsArdilla*=10
+     if (dpsArdilla>constanteMillon){
+       dpsArdilla/=constanteMillon
+       valorDpsArdilla ++
+     }
+     if (valorUnidades==unidadesCosteUpgradeArdilla){
+       banco -= costeUpgradeArdilla
+     }
+     else{
+      banco-= costeUpgradeArdilla/constanteMillon
+     }
+
+     costeUpgradeArdilla*=30
+     if (costeUpgradeArdilla>= constanteMillon){
+       costeUpgradeArdilla/=constanteMillon
+       unidadesCosteUpgradeArdilla++
+     }
+     $("#updateActual").html(costeUpgradeArdilla)
+  }
+}
+
+/*
+Manejo upgrade generador ardilla
+
+*/
+$("#updateActual").on("click",function(){
+  upArdilla();
+})
 //Boton de mute
 $("#mute").on("click",function(){
   mute();
@@ -409,7 +454,16 @@ $("#save").on("click",function(){
 
 //Manejo del click de la imagen
 $("#ardilla").on("click", function(){
-  banco++
+  if(valorDpsArdilla == valorUnidades){
+      banco+=dpsArdilla
+
+  }
+  else if (valorDpsArdilla > valorUnidades){
+    banco+=dpsArdilla*constanteMillon
+  }
+  else if (valorDpsArdilla<valorUnidades){
+    banco+= dpsArdilla/constanteMillon
+  }
   actualizarBanco()
 })
 //************************************************************
@@ -837,6 +891,10 @@ function autoSave(){
    objeto.costeInicial = costeInicial
    objeto.multiplicador = multiplicador
    objeto.existenciaUpgrade = existenciaUpgrade
+   objeto.dpsArdilla = dpsArdilla
+   objeto.valorDpsArdilla = valorDpsArdilla
+   objeto.unidadesCosteUpgradeArdilla = unidadesCosteUpgradeArdilla
+   objeto.costeUpgradeArdilla = costeUpgradeArdilla
    localStorage.setItem("save", JSON.stringify(objeto))
 }
 var xDate = {fecha:new Date()}

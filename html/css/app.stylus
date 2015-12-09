@@ -149,6 +149,10 @@ Código ardilla animación. (TOP)
   width 90%
   height 15%
 
+.updateArdilla
+  width 100%
+  height 10%
+  background-color white
 
 .todo
   width 100vw
