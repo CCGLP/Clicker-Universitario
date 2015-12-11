@@ -39,13 +39,17 @@ html
           p 
             strong UP
           p per second: 
-            stong#dps 0
+            strong#dps 0
             normal#udps unidades
+          p per tap:
+            strong#dpst 0
+            normal#udpst unidades
           
           img#ardilla(src="/imagenes/ardilla.png")
           div.updateArdilla
+            div Siguiente upgrade por click
             div#updateActual 1000
-              
+          canvas#ardillacanvas(width ="100" height = "300")
             
       section#mid.parte
         div.explicacion

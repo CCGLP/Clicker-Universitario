@@ -199,6 +199,10 @@ function fixSave(){
   $("#dps").html(dps.toFixed(1))
   $("#udps").html(manejarNombres(valorDps))
   $("#updateActual").html(costeUpgradeArdilla)
+  $("#dpst").html(dpsArdilla)
+  $("#udpst").html(manejarNombres(valorDpsArdilla))
+
+
   //CUIDADO SI CAMBIAS EL NUMERO DE GENERADORES EN LO SIGUIENTE
   for (lamiticai =1; lamiticai<=11; lamiticai++){
     $(aux+lamiticai).html(casitas[lamiticai-1])
@@ -410,7 +414,10 @@ function upArdilla(){
      if (dpsArdilla>constanteMillon){
        dpsArdilla/=constanteMillon
        valorDpsArdilla ++
+       $("#udpst").html(manejarNombres(valorDpsArdilla))
      }
+     $("#dpst").html(dpsArdilla)
+
      if (valorUnidades==unidadesCosteUpgradeArdilla){
        banco -= costeUpgradeArdilla
      }
@@ -456,7 +463,7 @@ $("#save").on("click",function(){
 $("#ardilla").on("click", function(){
   if(valorDpsArdilla == valorUnidades){
       banco+=dpsArdilla
-
+      animateClick(dpsArdilla)
   }
   else if (valorDpsArdilla > valorUnidades){
     banco+=dpsArdilla*constanteMillon
@@ -849,6 +856,70 @@ $("#defaultSkin").on("click",function(){
 
 })
 
+
+
+
+
+//***********************************************Cosas del canvas
+var c = $("#ardillacanvas")[0]
+var ctx = c.getContext("2d")
+var text = 10
+ctx.font = "20px Arial"
+var cantidad = 5
+var xPos = 60
+var textYpos = 300
+var idstoClean = new Array()
+var yPosActual = new Array()
+for (lamiticai=0; lamiticai<200; lamiticai++){
+  yPosActual[lamiticai] = textYpos
+}
+var cont = 0
+function textAnimate(cant){
+  //Limpiamos la pantalla. Good old days libgdx
+
+  ctx.clearRect(0,0,100,500)
+  //ctx.globalAlpha = 0
+  //ctx.fillStyle = "#fff"
+  //ctx.fillRect(0,0,100,500)
+
+  var metrics = ctx.measureText(text);
+  var textWidth = metrics.width
+
+  yPosActual[cant] -= cantidad
+
+  ctx.fillText(text, xPos, yPosActual[cant])
+
+
+
+
+}
+
+function animateClick(number){
+  text = number;
+  idstoClean[cont] = setInterval(function(){textAnimate(cont);}, 100)
+  cont++
+  if (cont >= 100){
+    for (lamiticai = 0; lamiticai<cont; lamiticai++){
+      clearInterval(idstoClean[lamiticai])
+      yPosActual[lamiticai] = textYpos
+    }
+    cont = 0
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+//***********************************************************
 
 
 

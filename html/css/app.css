@@ -149,9 +149,18 @@ Código ardilla animación. (TOP)
   height: 10%;
   background-color: #fff;
 }
+#updateActual {
+  cursor: pointer;
+  cursor: hand;
+}
 .todo {
   width: 100vw;
   height: 100vh;
+}
+#ardillacanvas {
+  position: relative;
+  bottom: 30vh;
+  pointer-events: none;
 }
 /*
 Relacionado con los textos explicativos (contextuales)
